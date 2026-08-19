@@ -90,7 +90,15 @@ html[lang="ar"] {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  /* Soft ambient wash in the two "quiz track" accents (sapphire/success), so
+     it reads as this product's own atmosphere rather than a generic tint.
+     Kept out of --background itself since bg-background/95 elsewhere relies
+     on that token staying a plain, alpha-blendable color. */
+  background-image:
+    radial-gradient(1100px circle at 100% -8%, rgba(37, 99, 235, 0.08), transparent 55%),
+    radial-gradient(950px circle at -8% 100%, rgba(5, 150, 105, 0.07), transparent 55%);
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: var(--font-sans);
   padding-bottom: var(--mobile-nav-h);

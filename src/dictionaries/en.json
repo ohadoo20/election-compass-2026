@@ -21,7 +21,7 @@
     "tabHome": "Home",
     "tabQuiz": "Quiz",
     "tabHotTopics": "Topics",
-    "tabPlatforms": "Platforms",
+    "tabPlatforms": "Parties",
     "tabMore": "More",
     "primaryNav": "Primary navigation",
     "switchLanguage": "Switch language"
@@ -57,7 +57,7 @@
         "description": "The journey of a single ballot — seats, the electoral threshold, and coalitions, explained simply in 5 minutes"
       },
       "platforms": {
-        "labelShort": "Platforms",
+        "labelShort": "Parties",
         "title": "Party Platform Summaries",
         "description": "Official positions, topic by topic"
       },
@@ -73,7 +73,28 @@
       }
     },
     "privacyNoteMobile": "Anonymous answers, nothing saved on a server",
-    "privacyNoteDesktop": "Your answers are completely anonymous and are never saved on a server."
+    "privacyNoteDesktop": "Your answers are completely anonymous and are never saved on a server.",
+    "popularFlag": "Most popular",
+    "quizFootnotePrefix": "Not sure how this works?",
+    "quizFootnoteLink": "Read the 5-minute explainer",
+    "partyMap": {
+      "eyebrow": "Party information",
+      "title": "The real party map",
+      "description": "Every party mapped by its actual position — political spectrum and coalition alignment, not just a written summary. Includes the campaign's hottest topics.",
+      "cta": "Browse the platforms",
+      "blocPro": "Pro-coalition",
+      "blocAnti": "Anti-coalition",
+      "left": "Left",
+      "right": "Right",
+      "sectoralLabel": "Sectoral parties (not on the axis):",
+      "youLabel": "Your position will appear here"
+    },
+    "challengePillar": {
+      "eyebrow": "Challenge your views",
+      "title": "Sure about where you stand?",
+      "description": "The Bubble Breaker shows you the strongest counter-argument to your views — no pressure, no judgment. Five core topics, both sides of each.",
+      "cta": "Challenge myself"
+    }
   },
   "guide": {
     "ballotHeroAlt": "Illustration of a ballot box with a slip going into it",
