@@ -8,6 +8,8 @@ import {
   Lock,
   ScrollText,
   Brain,
+  Flame,
+  Vote,
   Star,
 } from "lucide-react";
 import { InteractiveFlagBackdrop } from "@/components/InteractiveFlagBackdrop";
@@ -244,11 +246,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-10 grid gap-5 lg:grid-cols-12">
-              <Link href="/quiz?mode=short" className="group relative block lg:col-span-7">
-                <span className="absolute -top-3 start-8 z-20 flex items-center gap-1.5 rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-navy-dark shadow-md">
-                  <Star className="h-3 w-3 fill-current" />
-                  {t.popularFlag}
-                </span>
+              <Link href="/quiz?mode=short" className="group block lg:col-span-7">
                 <div className="notch-card bg-grain relative flex h-full flex-col overflow-hidden bg-gradient-to-br from-navy to-navy-light p-8 text-white transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_16px_40px_-6px_rgba(37,99,235,0.4)] sm:p-10">
                   <div className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-white backdrop-blur-md">
                     <Zap className="h-6 w-6" />
@@ -294,68 +292,99 @@ export default function HomePage() {
                 </div>
               </Link>
             </div>
-            <Link
-              href="/how-it-works"
-              className="mt-4 inline-block text-sm text-gray-dark"
-            >
-              {t.quizFootnotePrefix}{" "}
-              <span className="font-semibold text-sapphire underline">
-                {t.quizFootnoteLink}
-              </span>
-            </Link>
           </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-4 pb-20">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <Link
-              href="/platforms"
-              className="group flex flex-col rounded-2xl border border-gray/80 bg-white p-8 transition-all duration-200 hover:-translate-y-1 hover:border-sapphire/50 hover:shadow-ambient-lg"
-            >
-              <div className="mb-5 flex items-center justify-between">
-                <span className="text-sm font-bold uppercase tracking-wider text-sapphire">
-                  {t.partyMap.eyebrow}
+          <div className="mt-2">
+            <p className="mb-4 text-sm font-bold uppercase tracking-wider text-gray-dark">
+              {t.moreOnSite}
+            </p>
+            <div className="divide-y divide-gray overflow-hidden rounded-2xl border border-gray/80 bg-white">
+              <Link
+                href="/how-it-works"
+                className="group flex items-center gap-6 p-7 transition-colors hover:bg-sapphire/5"
+              >
+                <span className="font-display shrink-0 text-3xl font-normal text-gray-dark/50 transition-colors group-hover:text-sapphire">
+                  01
                 </span>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sapphire/10 text-sapphire">
-                  <ScrollText className="h-5 w-5" />
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-sapphire/10 text-sapphire">
+                  <Vote className="h-7 w-7" />
                 </div>
-              </div>
-              <PartyMiniMap className="mb-5" />
-              <h3 className="font-display text-2xl font-normal text-navy">
-                {t.partyMap.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-dark">
-                {t.partyMap.description}
-              </p>
-              <span className="mt-5 flex items-center gap-1 text-sm font-semibold text-sapphire">
-                {t.partyMap.cta}
-                <ChevronRight className={cn("h-4 w-4 rtl:rotate-180 transition-transform", hoverNudge)} />
-              </span>
-            </Link>
+                <div className="flex-1 text-start">
+                  <h3 className="font-display text-xl font-normal text-navy">
+                    {t.links.howItWorks.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-dark sm:text-base">
+                    {t.links.howItWorks.description}
+                  </p>
+                </div>
+                <ChevronRight className={cn("h-5 w-5 shrink-0 text-gray-dark rtl:rotate-180 transition-transform", hoverNudge)} />
+              </Link>
 
-            <Link
-              href="/challenge"
-              className="group flex flex-col rounded-2xl border border-gray/80 bg-white p-8 transition-all duration-200 hover:-translate-y-1 hover:border-coral/50 hover:shadow-ambient-lg"
-            >
-              <div className="mb-5 flex items-center justify-between">
-                <span className="text-sm font-bold uppercase tracking-wider text-coral">
-                  {t.challengePillar.eyebrow}
+              <Link
+                href="/platforms"
+                className="group flex items-center gap-6 p-7 transition-colors hover:bg-success-light/20"
+              >
+                <span className="font-display shrink-0 text-3xl font-normal text-gray-dark/50 transition-colors group-hover:text-success">
+                  02
                 </span>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-coral/15 text-coral">
-                  <Brain className="h-5 w-5" />
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-success/10 text-success">
+                  <ScrollText className="h-7 w-7" />
                 </div>
-              </div>
-              <h3 className="font-display text-2xl font-normal text-navy">
-                {t.challengePillar.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-dark">
-                {t.challengePillar.description}
-              </p>
-              <span className="mt-5 flex items-center gap-1 text-sm font-semibold text-coral">
-                {t.challengePillar.cta}
-                <ChevronRight className={cn("h-4 w-4 rtl:rotate-180 transition-transform", hoverNudge)} />
-              </span>
-            </Link>
+                <div className="flex-1 text-start">
+                  <h3 className="font-display text-xl font-normal text-navy">
+                    {t.links.platforms.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-dark sm:text-base">
+                    {t.links.platforms.description}
+                  </p>
+                </div>
+                <ChevronRight className={cn("h-5 w-5 shrink-0 text-gray-dark rtl:rotate-180 transition-transform", hoverNudge)} />
+              </Link>
+
+              <Link
+                href="/hot-topics"
+                className="group flex items-center gap-6 p-7 transition-colors hover:bg-coral/10"
+              >
+                <span className="font-display shrink-0 text-3xl font-normal text-gray-dark/50 transition-colors group-hover:text-coral">
+                  03
+                </span>
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-coral/15 text-coral">
+                  <Flame className="h-7 w-7" />
+                </div>
+                <div className="flex-1 text-start">
+                  <h3 className="font-display text-xl font-normal text-navy">
+                    {t.links.hotTopics.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-dark sm:text-base">
+                    {t.links.hotTopics.description}
+                  </p>
+                </div>
+                <ChevronRight className={cn("h-5 w-5 shrink-0 text-gray-dark rtl:rotate-180 transition-transform", hoverNudge)} />
+              </Link>
+
+              <Link
+                href="/challenge"
+                className="group flex items-center gap-6 p-7 transition-colors hover:bg-amber-light/20"
+              >
+                <span className="font-display shrink-0 text-3xl font-normal text-gray-dark/50 transition-colors group-hover:text-amber">
+                  04
+                </span>
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber/15 text-amber">
+                  <Brain className="h-7 w-7" />
+                </div>
+                <div className="flex-1 text-start">
+                  <h3 className="font-display text-xl font-normal text-navy">
+                    {t.links.challenge.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-dark sm:text-base">
+                    {t.links.challenge.description}
+                  </p>
+                </div>
+                <ChevronRight className={cn("h-5 w-5 shrink-0 text-gray-dark rtl:rotate-180 transition-transform", hoverNudge)} />
+              </Link>
+            </div>
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-2 rounded-full bg-gray-light px-5 py-3 text-sm text-gray-dark">
