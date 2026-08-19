@@ -21,6 +21,11 @@ import { PartyStance } from "@/types";
  * (בדומה לחד"ש-תע"ל, אך לאומי יותר ופחות "רשימה משותפת"); עמדות כחול לבן
  * נגזרו מהפרופיל הממלכתי-ביטחוני המוכר של מנהיגיה (בכירי צבא לשעבר,
  * מתנגדים למהפכה המשפטית של 2023).
+ *
+ * עדכון סריקה שבועית 16.8.2026: עודכנו/אוששו שני ערכים לפי אירועים מהשבוע
+ * שקדם לתאריך זה — likud/sec-5 (מקור חדש, ערך ללא שינוי) ו-
+ * yisrael-beiteinu/sec-11 (1←2, מקור והערה עודכנו). פירוט מלא ב-
+ * reports/party-stance-updates.xlsx.
  */
 export const partyStances: PartyStance[] = [
   { partyId: "yashar", questionId: "sec-1", stanceValue: -1 },
@@ -99,7 +104,15 @@ export const partyStances: PartyStance[] = [
       'נתניהו (ספטמבר 2025): "אמרנו שלא תקום מדינה פלסטינית - ואכן לא תקום מדינה פלסטינית".',
   },
   { partyId: "likud", questionId: "sec-4", stanceValue: -2 },
-  { partyId: "likud", questionId: "sec-5", stanceValue: 2 },
+  {
+    partyId: "likud",
+    questionId: "sec-5",
+    stanceValue: 2,
+    sourceUrl:
+      "https://www.themarker.com/news/macroeconomics/2026-08-09/ty-article/0000019f-e5d5-d86b-a59f-e5f79b3b0000",
+    sourceNote:
+      'ממשלת נתניהו החליטה (9.8.2026) להסיט 850 מיליון ש"ח שיועדו לתמריצי היי-טק ותעסוקה במשרד הכלכלה לטובת רכש ביטחוני דחוף ומסווג.',
+  },
   { partyId: "likud", questionId: "sec-6", stanceValue: 2 },
   { partyId: "likud", questionId: "sec-7", stanceValue: 0 },
   { partyId: "likud", questionId: "sec-8", stanceValue: 2 },
@@ -387,10 +400,10 @@ export const partyStances: PartyStance[] = [
   {
     partyId: "yisrael-beiteinu",
     questionId: "sec-11",
-    stanceValue: 1,
-    sourceUrl: "https://www.israelhayom.co.il/news/geopolitics/article/18964361",
+    stanceValue: 2,
+    sourceUrl: "https://www.news1.co.il/Archive/001-D-522171-00.html",
     sourceNote:
-      'ליברמן קרא לעצמאות ביטחונית ישראלית וביקר את ההתנהלות מול ארה"ב סביב ההסכם עם איראן.',
+      'ליברמן (12.8.2026), בביקור במעבר כרם שלום: נתניהו ויתר על עצמאות ישראל בקבלת החלטות ביטחוניות, וישראל "לא יכולה להזיז סיכה בלי לתאם עם ארצות הברית".',
   },
   { partyId: "yisrael-beiteinu", questionId: "sec-12", stanceValue: 0 },
   { partyId: "yisrael-beiteinu", questionId: "sec-13", stanceValue: 1 },
