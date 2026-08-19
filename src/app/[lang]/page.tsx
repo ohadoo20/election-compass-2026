@@ -12,7 +12,7 @@ import {
   Vote,
 } from "lucide-react";
 import { InteractiveFlagBackdrop } from "@/components/InteractiveFlagBackdrop";
-import { StaticFlagBackdrop } from "@/components/StaticFlagBackdrop";
+import { CompassBackdrop } from "@/components/CompassBackdrop";
 import { CompassMark } from "@/components/CompassMark";
 import { JsonLd } from "@/components/JsonLd";
 import { getSiteUrl } from "@/utils/site";
@@ -68,11 +68,19 @@ export default function HomePage() {
       {/* Mobile: fits one viewport in portrait, but min-h (not h) + no clipping
           so landscape — where the content is taller than the screen — stays
           scrollable instead of cutting the headline off with no way to reach it. */}
-      <div className="relative flex min-h-dvh flex-col px-4 pb-3 pt-6 lg:hidden">
-        {/* בנייד גרסה סטטית של אותו רקע: הנפנוף והפילטר של WavingFlag רצו
-            ללא הפסקה ולא נראים באטימות הזו — ראו StaticFlagBackdrop. */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <StaticFlagBackdrop className="absolute -inset-y-16 inset-x-[-15%] opacity-[0.12]" />
+      <div className="relative flex min-h-dvh flex-col overflow-hidden px-4 pb-3 pt-6 lg:hidden">
+        {/* Dark-to-light wash behind the kicker/headline only — the quiz
+            cards and everything below sit back on the page's own light
+            background, unrelated to this gradient. */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-[62dvh]"
+          style={{
+            background:
+              "linear-gradient(to bottom, var(--color-navy) 0%, var(--color-navy) 30%, transparent 100%)",
+          }}
+        />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[62dvh] overflow-hidden">
+          <CompassBackdrop className="absolute -top-10 start-1/2 h-[420px] w-[420px] -translate-x-1/2 rtl:translate-x-1/2 opacity-90" />
         </div>
 
         <div className="absolute start-3 top-3 z-20 flex -rotate-[8deg] flex-col overflow-hidden rounded shadow-md">
@@ -86,18 +94,18 @@ export default function HomePage() {
 
         <div className="relative z-10 flex flex-1 flex-col justify-center gap-8">
           <div>
-            <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-sapphire">
-              <CompassMark animate className="h-4 w-4 text-sapphire" />
+            <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-sapphire-light">
+              <CompassMark animate className="h-4 w-4 text-sapphire-light" />
               <span>{t.kicker}</span>
             </div>
-            <h1 className="font-display text-3xl font-normal leading-[1.15] text-navy">
+            <h1 className="font-display text-3xl font-normal leading-[1.15] text-white">
               {t.headingStart}{" "}
               <span className="text-gradient-sapphire-emerald font-bold">
                 {t.headingHighlight}
               </span>{" "}
               {t.headingEnd}
             </h1>
-            <p className="mt-2 text-xs leading-relaxed text-gray-dark">
+            <p className="mt-2 text-xs leading-relaxed text-white/70">
               {t.subtitleMobile}
             </p>
           </div>

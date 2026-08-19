@@ -21,7 +21,7 @@
     "tabHome": "Home",
     "tabQuiz": "Quiz",
     "tabHotTopics": "Topics",
-    "tabPlatforms": "Platforms",
+    "tabPlatforms": "Parties",
     "tabMore": "More",
     "primaryNav": "Primary navigation",
     "switchLanguage": "Switch language"
@@ -57,7 +57,7 @@
         "description": "The journey of a single ballot — seats, the electoral threshold, and coalitions, explained simply in 5 minutes"
       },
       "platforms": {
-        "labelShort": "Platforms",
+        "labelShort": "Parties",
         "title": "Party Platform Summaries",
         "description": "Official positions, topic by topic"
       },
