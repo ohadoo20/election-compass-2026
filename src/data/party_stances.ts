@@ -26,11 +26,31 @@ import { PartyStance } from "@/types";
  * שקדם לתאריך זה — likud/sec-5 (מקור חדש, ערך ללא שינוי) ו-
  * yisrael-beiteinu/sec-11 (1←2, מקור והערה עודכנו). פירוט מלא ב-
  * reports/party-stance-updates.xlsx.
+ *
+ * ביקורת נאותות אוגוסט 2026 (מסלול מהיר, 20 שאלות x 14 מפלגות): כל 20 שאלות
+ * "המסלול המהיר" לכל 14 המפלגות המתועדות למעלה נבדקו מחדש מול מקורות
+ * עצמאיים (מצעים רשמיים, ראיונות, הצבעות בפועל בכנסת), כולל אימות בפועל של
+ * כל sourceUrl שכבר היה קיים מול תוכן sourceNote הצמוד לו. תוקנו/עודכנו
+ * עשרות ערכים ומקורות; מספר מקורות שהתבררו כשגויים/לא-רלוונטיים
+ * (ceci.org.il redirect, mekomit.co.il 403, וכתבת
+ * calcalist.co.il/local_news/article/r1t00cyqgje ששימשה בטעות כמקור זהה
+ * עבור rel-5 בכמה מפלגות ואינה מזכירה אף אחת מהן) הוסרו. yisrael-beiteinu/
+ * sec-11 נשאר כפי שעודכן בסריקה השבועית לעיל (מקור עדכני וממוקד יותר ממה
+ * שאותר בביקורת הזו). דוחות המקור המלאים לכל מפלגה נמצאים ב-
+ * reports/stance-verification/, ופירוט מלא של כל השינויים ב-
+ * reports/party-stance-updates.xlsx.
  */
 export const partyStances: PartyStance[] = [
   { partyId: "yashar", questionId: "sec-1", stanceValue: -1 },
   { partyId: "yashar", questionId: "sec-2", stanceValue: 1 },
-  { partyId: "yashar", questionId: "sec-3", stanceValue: -2 },
+  {
+    partyId: "yashar",
+    questionId: "sec-3",
+    stanceValue: -2,
+    sourceUrl: "https://www.inn.co.il/news/669101",
+    sourceNote:
+      'איזנקוט (17.5.25): "אני חושב שמדינה פלסטינית זה לא רלוונטי אחרי שבעה באוקטובר". מתווה "היום שאחרי" שהציג בקבינט המלחמה קובע כי ישראל לא תתחייב בחמש השנים הבאות למדינה פלסטינית, ומתנה כל מו"מ עתידי ברפורמות מקיפות ברשות הפלסטינית ובפירוז מוחלט.',
+  },
   { partyId: "yashar", questionId: "sec-4", stanceValue: -1 },
   { partyId: "yashar", questionId: "sec-5", stanceValue: 1 },
   { partyId: "yashar", questionId: "sec-6", stanceValue: 0 },
@@ -62,14 +82,28 @@ export const partyStances: PartyStance[] = [
   { partyId: "yashar", questionId: "rel-2", stanceValue: 1 },
   { partyId: "yashar", questionId: "rel-3", stanceValue: -1 },
   { partyId: "yashar", questionId: "rel-4", stanceValue: 1 },
-  { partyId: "yashar", questionId: "rel-5", stanceValue: 0 },
+  {
+    partyId: "yashar",
+    questionId: "rel-5",
+    stanceValue: -2,
+    sourceUrl: "https://www.kikar.co.il/interviews/t5yvrx",
+    sourceNote:
+      "איזנקוט מוביל הצעת חוק גיוס קונקרטית: מכסת פטור של כ-3% בלבד מכלל כ-150,000 המתגייסים בשנה, באמצעות מנהלת ממלכתית שתחליף את מנגנון הפטור הרבני-האוטומטי הקיים, ודורש גיוס חובה (צבאי או לאומי) לכלל הציבור, כולל חרדים -- עמדה מפורשת נגד שימור הפטור הרחב הקיים.",
+  },
   { partyId: "yashar", questionId: "rel-7", stanceValue: -1 },
   { partyId: "yashar", questionId: "rel-8", stanceValue: 1 },
   { partyId: "yashar", questionId: "rel-9", stanceValue: -1 },
   { partyId: "yashar", questionId: "rel-10", stanceValue: 1 },
   { partyId: "yashar", questionId: "rel-11", stanceValue: 1 },
   { partyId: "yashar", questionId: "jud-1", stanceValue: -1 },
-  { partyId: "yashar", questionId: "jud-2", stanceValue: 1 },
+  {
+    partyId: "yashar",
+    questionId: "jud-2",
+    stanceValue: 1,
+    sourceUrl: "https://yasharwitheisenkot.com/topic/missions/",
+    sourceNote:
+      'אתר המפלגה: המפלגה תומכת ב"בתי משפט חזקים, עצמאיים ואחראים" כחלק מחיזוק הדמוקרטיה ושלטון החוק בהפרדת רשויות, בהתאם גם להצהרת איזנקוט על "קו אדום" נגד השתלטות פוליטית על מערכת המשפט.',
+  },
   { partyId: "yashar", questionId: "jud-3", stanceValue: -1 },
   { partyId: "yashar", questionId: "jud-5", stanceValue: 0 },
   { partyId: "yashar", questionId: "jud-7", stanceValue: -1 },
@@ -77,22 +111,36 @@ export const partyStances: PartyStance[] = [
   { partyId: "yashar", questionId: "jud-9", stanceValue: -1 },
   { partyId: "yashar", questionId: "gov-1", stanceValue: 2 },
   { partyId: "yashar", questionId: "gov-3", stanceValue: 1 },
-  { partyId: "yashar", questionId: "gov-4", stanceValue: 1 },
+  {
+    partyId: "yashar",
+    questionId: "gov-4",
+    stanceValue: 2,
+    sourceUrl: "https://www.srugim.co.il/701279-%D7%90%D7%99%D7%96%D7%A0%D7%A7%D7%95%D7%98-%D7%97%D7%99%D7%99%D7%91%D7%99%D7%9D-%D7%9C%D7%97%D7%AA%D7%95%D7%A8-%D7%9C%D7%A9%D7%9C%D7%95%D7%9D-%D7%9E%D7%AA%D7%95%D7%9A-%D7%A2%D7%95%D7%A6%D7%9E%D7%94",
+    sourceNote:
+      'איזנקוט (15.8.2022): "ברמה הערכית, אדם עם כתבי אישום לא יכול להיות רה"מ"; "איש ציבור... לא יכול להתמודד לתפקיד ציבורי עם כתב אישום".',
+  },
   { partyId: "yashar", questionId: "gov-5", stanceValue: 1 },
   { partyId: "yashar", questionId: "soc-1", stanceValue: 0 },
   { partyId: "yashar", questionId: "soc-2", stanceValue: 0 },
   { partyId: "yashar", questionId: "soc-3", stanceValue: 1 },
   { partyId: "yashar", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "yashar", questionId: "soc-6", stanceValue: 0 },
+  {
+    partyId: "yashar",
+    questionId: "soc-6",
+    stanceValue: 2,
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/sjuuc11rt11g",
+    sourceNote:
+      'איזנקוט בכנס בתיאטרון ירושלים (28.4.26): "מחצית מחברי הרשימה יהיו נשים" (רשימה מתחלפת גברים/נשים), ושליש מהמועמדים יהיו צעירים.',
+  },
   { partyId: "yashar", questionId: "soc-7", stanceValue: 0 },
   { partyId: "yashar", questionId: "soc-10", stanceValue: 0 },
   {
     partyId: "likud",
     questionId: "sec-1",
     stanceValue: 2,
-    sourceUrl: "https://www.msn.com/he-il/news/news/%D7%A2%D7%A9%D7%A8%D7%95%D7%AA-%D7%94%D7%AA%D7%A0%D7%97%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%91%D7%9E%D7%99%D7%9C%D7%99%D7%90%D7%A8%D7%93%D7%99%D7%9D-%D7%94%D7%97%D7%9C%D7%98%D7%95%D7%AA-%D7%94%D7%A7%D7%91%D7%99%D7%A0%D7%98-%D7%A9%D7%94%D7%95%D7%A1%D7%AA%D7%A8%D7%95-%D7%95%D7%9E%D7%A4%D7%AA-%D7%94%D7%99%D7%99%D7%A9%D7%95%D7%91%D7%99%D7%9D/ar-AA27T0m6",
+    sourceUrl: "https://www.ynet.co.il/news/article/b1db8jxngx",
     sourceNote:
-      "ממשלת נתניהו אישרה עשרות התנחלויות חדשות ביהודה ושומרון בהיקף של מיליארדי שקלים.",
+      'ממשלת נתניהו קידמה בקצב שיא הרחבת התיישבות ביו"ש -- 41,709 יח"ד קודמו מאז כינון הממשלה (יותר מ-6 השנים שקדמו), ובמאי 2025 אישר הקבינט 22 יישובים חדשים נוספים ובמרץ 2025 עוד 34 יישובים חדשים.',
   },
   { partyId: "likud", questionId: "sec-2", stanceValue: 2 },
   {
@@ -117,14 +165,35 @@ export const partyStances: PartyStance[] = [
   { partyId: "likud", questionId: "sec-7", stanceValue: 0 },
   { partyId: "likud", questionId: "sec-8", stanceValue: 2 },
   { partyId: "likud", questionId: "sec-9", stanceValue: -1 },
-  { partyId: "likud", questionId: "sec-10", stanceValue: 2 },
-  { partyId: "likud", questionId: "sec-11", stanceValue: 1 },
+  {
+    partyId: "likud",
+    questionId: "sec-10",
+    stanceValue: 2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%AA%D7%A7%D7%A4%D7%94_%D7%94%D7%90%D7%99%D7%A8%D7%90%D7%A0%D7%99%D7%AA_%D7%A2%D7%9C_%D7%99%D7%A9%D7%A8%D7%90%D7%9C_(%D7%99%D7%95%D7%A0%D7%99_2025)",
+    sourceNote:
+      'ישראל בראשות נתניהו יזמה נגד איראן מבצע צבאי רחב היקף (יוני 2025, "מלחמת 12 הימים") נגד תוכנית הגרעין והטילים. נתניהו: "אילולא שתי הפעולות שביצענו נגד איראן, כבר היו לה פצצות אטום".',
+  },
+  {
+    partyId: "likud",
+    questionId: "sec-11",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/news/article/hk8rt1105xe",
+    sourceNote:
+      'בספטמבר 2025 תקפה ישראל (בהוראת נתניהו) את צמרת חמאס בדוחה, קטאר, ככל הנראה ללא תיאום מלא עם וושינגטון. טראמפ: "זו הייתה החלטה של ראש הממשלה נתניהו, לא שלי... אני לא מרוצה כלל". בהמשך התנצל נתניהו בפני קטאר בלחץ טראמפ והתחייב לא לחזור על כך.',
+  },
   { partyId: "likud", questionId: "sec-12", stanceValue: -1 },
   { partyId: "likud", questionId: "sec-13", stanceValue: 0 },
   { partyId: "likud", questionId: "eco-1", stanceValue: 1 },
   { partyId: "likud", questionId: "eco-2", stanceValue: 0 },
   { partyId: "likud", questionId: "eco-3", stanceValue: 1 },
-  { partyId: "likud", questionId: "eco-4", stanceValue: -1 },
+  {
+    partyId: "likud",
+    questionId: "eco-4",
+    stanceValue: -1,
+    sourceUrl: "https://news.walla.co.il/item/1703681",
+    sourceNote:
+      'נתניהו: "אני תומך בהעלאת שכר המינימום, אבל במצב הכלכלי ששורר כיום בעולם הצעת החוק הזאת הייתה מביאה לאבטלה גדולה מאוד" ותגרום למעסיקים "לפטר אלפי ישראלים". במקום זאת הועדף להרחיב את מס הכנסה השלילי.',
+  },
   { partyId: "likud", questionId: "eco-5", stanceValue: 1 },
   { partyId: "likud", questionId: "eco-6", stanceValue: -1 },
   { partyId: "likud", questionId: "eco-7", stanceValue: 1 },
@@ -146,23 +215,44 @@ export const partyStances: PartyStance[] = [
   { partyId: "likud", questionId: "inf-4", stanceValue: 1 },
   { partyId: "likud", questionId: "inf-5", stanceValue: 0 },
   { partyId: "likud", questionId: "inf-6", stanceValue: -1 },
-  { partyId: "likud", questionId: "rel-2", stanceValue: -1 },
+  {
+    partyId: "likud",
+    questionId: "rel-2",
+    stanceValue: -1,
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/b1yh1ijebg",
+    sourceNote:
+      "הכנסת דחתה הצעת חוק לתחבורה ציבורית מלאה בשבת בקריאה טרומית (58 נגד מול 43 בעד); הקואליציה בראשות הליכוד הצביעה נגד כגוש.",
+  },
   { partyId: "likud", questionId: "rel-3", stanceValue: 1 },
-  { partyId: "likud", questionId: "rel-4", stanceValue: -1 },
+  {
+    partyId: "likud",
+    questionId: "rel-4",
+    stanceValue: -1,
+    sourceUrl: "https://www.ynet.co.il/news/article/hy3j0ukx11e",
+    sourceNote:
+      'בדצמבר 2025 יו"ר הכנסת אמיר אוחנה (ליכוד) היה חבר הקואליציה היחיד שהצביע בעד הצעת חוק נישואים אזרחיים של האופוזיציה -- בניגוד לכל שאר סיעת הליכוד, שהצביעה נגד פה אחד, בהתאם להסכם הליכוד-יהדות התורה על שימור הסטטוס קוו.',
+  },
   {
     partyId: "likud",
     questionId: "rel-5",
     stanceValue: 2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%99%D7%95%D7%A1",
+    sourceUrl: "https://www.idi.org.il/articles/62341",
     sourceNote:
-      "הממשלה (בראשות הליכוד, עם ש\"ס, יהדות התורה, עוצמה יהודית והציונות הדתית) קיבלה ב-2023 את החלטה 682 שדחתה את גיוס תלמידי הישיבות עד לחקיקה מוסכמת, בפועל ממשיכה את הפטור בפועל.",
+      'מעבר להחלטת ממשלה 682 (2023): הצעת חוק הגיוס שקידם ח"כ בועז ביסמוט מטעם הקואליציה (נובמבר 2025) קובעת יעדי גיוס בפועל נמוכים ביותר לתלמידי ישיבות -- כ-700 מגויסים נוספים בלבד על פני שנה וחצי, מעבר לבסיס הקיים של כ-3,000 בשנה -- כלומר שימור בפועל של הפטור הרחב.',
   },
   { partyId: "likud", questionId: "rel-7", stanceValue: 1 },
   { partyId: "likud", questionId: "rel-8", stanceValue: -1 },
   { partyId: "likud", questionId: "rel-9", stanceValue: 1 },
   { partyId: "likud", questionId: "rel-10", stanceValue: -1 },
   { partyId: "likud", questionId: "rel-11", stanceValue: -1 },
-  { partyId: "likud", questionId: "jud-1", stanceValue: 2 },
+  {
+    partyId: "likud",
+    questionId: "jud-1",
+    stanceValue: 2,
+    sourceUrl: "https://www.ynet.co.il/news/article/b1lxba3k2",
+    sourceNote:
+      "הכנסת אישרה בקריאה ראשונה (13-14 במרץ 2023) את חוק השפיטה הכולל פסקת התגברות ברוב רגיל (61 בעד מול 52 נגד), ביוזמת הקואליציה בראשות הליכוד.",
+  },
   {
     partyId: "likud",
     questionId: "jud-2",
@@ -195,23 +285,65 @@ export const partyStances: PartyStance[] = [
   },
   { partyId: "likud", questionId: "gov-5", stanceValue: -2 },
   { partyId: "likud", questionId: "soc-1", stanceValue: 1 },
-  { partyId: "likud", questionId: "soc-2", stanceValue: -1 },
+  {
+    partyId: "likud",
+    questionId: "soc-2",
+    stanceValue: -1,
+    sourceUrl: "https://www.ynet.co.il/news/article/hy3j0ukx11e",
+    sourceNote:
+      'לא אותר מקור ישיר וממוקד בהכרה בזוגיות חד-מינית/נישואים אזרחיים "לכל דבר ועניין" באופן ספציפי. מקור עקיף: הצבעת סיעת הליכוד (למעט אוחנה) נגד חוק נישואים אזרחיים כלליים בדצמבר 2025, וכן שב-2018 נתניהו הצהיר תמיכה עקרונית בפונדקאות לזוגות חד-מיניים אך הצביע נגד תיקון שהיה מיישם זאת בפועל.',
+  },
   { partyId: "likud", questionId: "soc-3", stanceValue: 2 },
   { partyId: "likud", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "likud", questionId: "soc-6", stanceValue: -1 },
+  {
+    partyId: "likud",
+    questionId: "soc-6",
+    stanceValue: -1,
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1vsdzmv0",
+    sourceNote:
+      "הצעת חוק לייצוג הולם/שווה לנשים בדירקטוריונים של חברות ציבוריות נדחתה בקריאה טרומית (49 נגד מול 41 בעד); בין המצביעות נגד מסיעת הליכוד: גלית דיסטל אטבריאן, טלי גוטליב, צגה מלכו, אתי עטיה וקטי שטרית, וגם השרה לשוויון חברתי (ליכוד) התנגדה להצעה.",
+  },
   { partyId: "likud", questionId: "soc-7", stanceValue: 1 },
   { partyId: "likud", questionId: "soc-10", stanceValue: -1 },
-  { partyId: "beyachad", questionId: "sec-1", stanceValue: 1 },
+  {
+    partyId: "beyachad",
+    questionId: "sec-1",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/news/article/ryrupmzlf",
+    sourceNote:
+      'בנט הוא לשעבר יו"ר מועצת יש"ע ו"הבית היהודי", בעל היסטוריה אידאולוגית פרו-התיישבותית מובהקת, אך בפועל כרה"מ (2021-2022) נתפס כמרסן יחסית באישורי בנייה ("המתנחלים מאוכזבים: גנץ מאשר בנייה, בנט דוחה אותה"). עמדתו הנוכחית: שימור שליטה ביטחונית בשטחי C, לצד שלילה מפורשת של סיפוח שטחי A/B -- לא הרחבה אגרסיבית חדשה, אלא שימור סטטוס-קוו מוטה-ימין.',
+  },
   { partyId: "beyachad", questionId: "sec-2", stanceValue: 1 },
-  { partyId: "beyachad", questionId: "sec-3", stanceValue: -1 },
+  {
+    partyId: "beyachad",
+    questionId: "sec-3",
+    stanceValue: -1,
+    sourceUrl: "https://www.srugim.co.il/1036415-%D7%91%D7%A0%D7%98-%D7%96%D7%95-%D7%94%D7%A1%D7%99%D7%91%D7%94-%D7%A9%D7%90%D7%A0%D7%99-%D7%A0%D7%92%D7%93-%D7%9E%D7%93%D7%99%D7%A0%D7%94-%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A0%D7%99%D7%AA",
+    sourceNote:
+      'פילוג מתועד בין המנהיגים: בנט חוזר ואומר "לעולם ולא בשום תנאי לא אתן את ידי להקמת מדינה פלסטינית", בעוד לפיד תמך במפורש בפתרון שתי המדינות, כולל בנאום כרה"מ באו"ם ב-2022 ("הסכם עם הפלסטינים המבוסס על שתי מדינות לשני עמים הוא הדבר הנכון לביטחון ישראל").',
+  },
   { partyId: "beyachad", questionId: "sec-4", stanceValue: -1 },
   { partyId: "beyachad", questionId: "sec-5", stanceValue: 1 },
   { partyId: "beyachad", questionId: "sec-6", stanceValue: 1 },
   { partyId: "beyachad", questionId: "sec-7", stanceValue: 1 },
   { partyId: "beyachad", questionId: "sec-8", stanceValue: 2 },
   { partyId: "beyachad", questionId: "sec-9", stanceValue: 1 },
-  { partyId: "beyachad", questionId: "sec-10", stanceValue: 1 },
-  { partyId: "beyachad", questionId: "sec-11", stanceValue: 0 },
+  {
+    partyId: "beyachad",
+    questionId: "sec-10",
+    stanceValue: 2,
+    sourceUrl: "https://www.israelhayom.co.il/news/defense/article/21230595",
+    sourceNote:
+      'בנט (2026): "אם חיזבאללה יורה עלינו -- אנחנו יורים על איראן", לצד אזהרה מפני הסכם חלקי עם איראן.',
+  },
+  {
+    partyId: "beyachad",
+    questionId: "sec-11",
+    stanceValue: -1,
+    sourceUrl: "https://glz.co.il/%D7%92%D7%9C%D7%A6/%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA/%D7%99%D7%A0%D7%99%D7%A8-%D7%A7%D7%95%D7%96%D7%99%D7%9F-%D7%95%D7%A1%D7%A4%D7%99-%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%94/%D7%99%D7%A0%D7%99%D7%A8-%D7%A7%D7%95%D7%96%D7%99%D7%9F-%D7%95%D7%A1%D7%A4%D7%99-%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9426-12-2023-0812/%D7%9C%D7%A4%D7%99%D7%93-%D7%A0%D7%92%D7%93-%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95-%D7%9E%D7%97%D7%A4%D7%A9-%D7%A2%D7%99%D7%9E%D7%95%D7%AA-%D7%A2%D7%9D-%D7%94%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%A0%D7%99%D7%9D-%D7%A9%D7%9E%D7%A9%D7%A8%D7%AA-%D7%90%D7%95%D7%AA%D7%95-%D7%A4%D7%95%D7%9C%D7%99%D7%98%D7%99%D7%AA",
+    sourceNote:
+      'לפיד ביקר בפומבי את נתניהו על כך ש"מחפש עימות עם האמריקנים שמשרת אותו פוליטית". יעד מדיניות חוץ מוצהר נוסף: "שיקום ושינוי כיוון של היחסים עם ארה"ב, חזרה למעמד הדו-מפלגתי" -- עמדה המעדיפה שימור הברית על פני עצמאות המחייבת עימות.',
+  },
   { partyId: "beyachad", questionId: "sec-12", stanceValue: 1 },
   { partyId: "beyachad", questionId: "sec-13", stanceValue: 1 },
   { partyId: "beyachad", questionId: "eco-1", stanceValue: 1 },
@@ -235,34 +367,55 @@ export const partyStances: PartyStance[] = [
   { partyId: "beyachad", questionId: "rel-2", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-3", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-4", stanceValue: 0 },
-  { partyId: "beyachad", questionId: "rel-5", stanceValue: 0 },
+  {
+    partyId: "beyachad",
+    questionId: "rel-5",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/news/article/ryunwx4lzx",
+    sourceNote:
+      'בנט ולפיד, יחד ובאופן חד-משמעי, נגד המשך פטור הגיוס: בנט: "כולם, כולם, חייבים להתגייס", ומי שלא משרת "לא יקבל מימון מהמדינה". לפיד: פשרות עם החרדים הן "טעות פוליטית וטעות ערכית", עם הצעה קונקרטית לגיוס בחורי ישיבה צעירים, לימודי ליבה ושילוב בשוק העבודה.',
+  },
   { partyId: "beyachad", questionId: "rel-7", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-8", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-9", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-10", stanceValue: 0 },
   { partyId: "beyachad", questionId: "rel-11", stanceValue: 2 },
-  { partyId: "beyachad", questionId: "jud-1", stanceValue: 0 },
+  {
+    partyId: "beyachad",
+    questionId: "jud-1",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/news/article/r1xfjh0wp",
+    sourceNote:
+      'לפיד לאחר פסילת עילת הסבירות בבג"ץ (ינואר 2024): "העליון מילא נאמנה את תפקידו... אנחנו נותנים לו גיבוי מלא". בנט (מקור נפרד, ice.co.il): הרפורמה "הצעה מסוכנת שתפגע ביסודות המדינה".',
+  },
   {
     partyId: "beyachad",
     questionId: "jud-2",
-    stanceValue: 0,
+    stanceValue: 2,
     sourceUrl: "https://www.ice.co.il/local-news/news/article/927041",
     sourceNote:
-      "בנט (2023 ואילך) כינה את הרפורמה המשפטית, הכוללת פגיעה בסמכות בג\"ץ, \"הצעה מסוכנת שתפגע ביסודות המדינה\"; לפיד תמך במפורש בשימור סמכות הביקורת השיפוטית של בית המשפט העליון.",
+      'בנט: הרפורמה המשפטית "מסוכנת... תפגע ביסודות המדינה, כלכלתה ואזרחיה", ו"לא ניתן להעביר לקיצון השני של איבוד איזונים ובלמים, סירוס מערכת המשפט". לפיד תמך במפורש ובאופן חד-משמעי בסמכות בג"ץ לבטל חקיקה (ר\' jud-1).',
   },
   {
     partyId: "beyachad",
     questionId: "jud-3",
-    stanceValue: 0,
+    stanceValue: -1,
     sourceUrl: "https://www.ice.co.il/local-news/news/article/927041",
     sourceNote:
-      "שני המנהיגים מתנגדים לשינוי הרכב הוועדה לבחירת שופטים לרוב קואליציוני, כחלק מהתנגדותם הכוללת לרפורמה המשפטית של 2023 ואילך.",
+      'בנט מתנגד "להעברת מינוי כלל השופטים בישראל לידי ראש הממשלה בלבד" (הגרסה הקיצונית ביותר שנדונה ב-2023), אך גם אומר שהוא "מאמין שנדרשים שינויים מסוימים במערכת המשפט" -- לא התנגדות גורפת לכל שינוי בהרכב הוועדה, אלא להעברת שליטה מוחלטת/קיצונית.',
   },
   { partyId: "beyachad", questionId: "jud-5", stanceValue: 0 },
   { partyId: "beyachad", questionId: "jud-7", stanceValue: 0 },
   { partyId: "beyachad", questionId: "jud-8", stanceValue: 0 },
   { partyId: "beyachad", questionId: "jud-9", stanceValue: 0 },
-  { partyId: "beyachad", questionId: "gov-1", stanceValue: 2 },
+  {
+    partyId: "beyachad",
+    questionId: "gov-1",
+    stanceValue: 2,
+    sourceUrl: "https://www.haaretz.co.il/news/elections/2026-05-12/ty-article/.premium/0000019e-1d2f-d618-adde-1d7f20fc0000",
+    sourceNote:
+      'בכנס הראשון הרשמי של מפלגת "ביחד" (12.5.2026), בנט: "הדבר הראשון שנעשה [אם נצליח להרכיב ממשלה] יהיה הקמת ועדת חקירה ממלכתית ל-7 באוקטובר". כתבה נוספת (הארץ, 26.4.2026) מאששת התחייבות משותפת של בנט ולפיד להקמתה ביום הראשון לממשלתם.',
+  },
   { partyId: "beyachad", questionId: "gov-3", stanceValue: 2 },
   { partyId: "beyachad", questionId: "gov-4", stanceValue: 1 },
   { partyId: "beyachad", questionId: "gov-5", stanceValue: 1 },
@@ -277,9 +430,9 @@ export const partyStances: PartyStance[] = [
     partyId: "otzma-yehudit",
     questionId: "sec-1",
     stanceValue: 2,
-    sourceUrl: "https://www.msn.com/he-il/news/news/%D7%A2%D7%A9%D7%A8%D7%95%D7%AA-%D7%94%D7%AA%D7%A0%D7%97%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%91%D7%9E%D7%99%D7%9C%D7%99%D7%90%D7%A8%D7%93%D7%99%D7%9D-%D7%94%D7%97%D7%9C%D7%98%D7%95%D7%AA-%D7%94%D7%A7%D7%91%D7%99%D7%A0%D7%98-%D7%A9%D7%94%D7%95%D7%A1%D7%AA%D7%A8%D7%95-%D7%95%D7%9E%D7%A4%D7%AA-%D7%94%D7%99%D7%99%D7%A9%D7%95%D7%91%D7%99%D7%9D/ar-AA27T0m6",
+    sourceUrl: "https://www.ynet.co.il/news/article/r14vvrnhbe",
     sourceNote:
-      "עוצמה יהודית תומכת בהחלטות הקבינט להרחבת עשרות התנחלויות חדשות; אין ציטוט אישי ממוקד של בן גביר בחיפוש זה, ההערכה מבוססת על מדיניות הממשלה שהוא חבר בה.",
+      'הקבינט (בשותפות עוצמה יהודית) אישר ב-2026 34 יישובים חדשים ביו"ש (הכשרת 10 מאחזים + 24 יישובים חדשים בשטח C); בן גביר אישית לחץ לכלול את "יישוב הדעת" ברשימה. נכון לאפריל 2026, 212 מתוך 363 מאחזים (58%+) הוקמו תחת הממשלה הנוכחית.',
   },
   { partyId: "otzma-yehudit", questionId: "sec-2", stanceValue: 2 },
   {
@@ -296,7 +449,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "otzma-yehudit", questionId: "sec-7", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "sec-8", stanceValue: 2 },
   { partyId: "otzma-yehudit", questionId: "sec-9", stanceValue: -2 },
-  { partyId: "otzma-yehudit", questionId: "sec-10", stanceValue: 2 },
+  {
+    partyId: "otzma-yehudit",
+    questionId: "sec-10",
+    stanceValue: 2,
+    sourceUrl: "https://www.maariv.co.il/news/politics/article-1305648",
+    sourceNote:
+      'בן גביר (אפריל 2026) שיבח את "העבודה הנפלאה" במערכה נגד איראן, טען שהאיום הגרעיני הצדיק את המערכה, ורמז ל"הישגים נוספים בזירה האיראנית שטרם נחשפו לציבור".',
+  },
   {
     partyId: "otzma-yehudit",
     questionId: "sec-11",
@@ -327,7 +487,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "otzma-yehudit", questionId: "inf-6", stanceValue: -1 },
   { partyId: "otzma-yehudit", questionId: "rel-2", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "rel-3", stanceValue: 2 },
-  { partyId: "otzma-yehudit", questionId: "rel-4", stanceValue: -2 },
+  {
+    partyId: "otzma-yehudit",
+    questionId: "rel-4",
+    stanceValue: -2,
+    sourceUrl: "https://www.inn.co.il/news/576700",
+    sourceNote:
+      'בן גביר (רדיו וואלה, 7.9.2022): "הקו האדום שלי הוא נישואי להט"ב" וכי לא יתיר בחקיקה נישואין שאינם "כדת משה וישראל".',
+  },
   {
     partyId: "otzma-yehudit",
     questionId: "rel-5",
@@ -341,7 +508,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "otzma-yehudit", questionId: "rel-9", stanceValue: 2 },
   { partyId: "otzma-yehudit", questionId: "rel-10", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "rel-11", stanceValue: -2 },
-  { partyId: "otzma-yehudit", questionId: "jud-1", stanceValue: 2 },
+  {
+    partyId: "otzma-yehudit",
+    questionId: "jud-1",
+    stanceValue: 2,
+    sourceUrl: "https://news.walla.co.il/item/3539088",
+    sourceNote:
+      'פסקת התגברות ברוב של 61 ח"כים הייתה דרישה מרכזית של גורמי הימין הדתי-לאומי (כולל בן גביר ועוצמה יהודית) במשא ומתן הקואליציוני להקמת הממשלה ה-37 (סוף 2022). בן גביר תקף פומבית פסיקות בג"ץ המבטלות חקיקה, וקרא לממשלה "להעביר את הרפורמה במלואה".',
+  },
   {
     partyId: "otzma-yehudit",
     questionId: "jud-2",
@@ -367,13 +541,27 @@ export const partyStances: PartyStance[] = [
   { partyId: "otzma-yehudit", questionId: "gov-4", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "gov-5", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "soc-1", stanceValue: 2 },
-  { partyId: "otzma-yehudit", questionId: "soc-2", stanceValue: -2 },
+  {
+    partyId: "otzma-yehudit",
+    questionId: "soc-2",
+    stanceValue: -2,
+    sourceUrl: "https://www.inn.co.il/news/576700",
+    sourceNote:
+      'בן גביר (רדיו וואלה, 7.9.2022): "הקו האדום שלי הוא נישואי להט"ב" -- הצהיר שלא יתיר בחקיקה נישואין חד-מיניים או פונדקאות להט"ב, בנימוק שבמדינה יהודית נישואין צריכים להיות "כדת משה וישראל".',
+  },
   { partyId: "otzma-yehudit", questionId: "soc-3", stanceValue: 2 },
   { partyId: "otzma-yehudit", questionId: "soc-5", stanceValue: 2 },
   { partyId: "otzma-yehudit", questionId: "soc-6", stanceValue: -2 },
   { partyId: "otzma-yehudit", questionId: "soc-7", stanceValue: 2 },
   { partyId: "otzma-yehudit", questionId: "soc-10", stanceValue: -2 },
-  { partyId: "yisrael-beiteinu", questionId: "sec-1", stanceValue: 2 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "sec-1",
+    stanceValue: 1,
+    sourceUrl: "https://beytenu.org.il/party-platform/",
+    sourceNote:
+      'המצע הרשמי (2026) מקדיש סעיף נפרד ל"יהודה ושומרון" שתוכנו "ייצוב המצב הביטחוני והכלכלי בשיתוף פעולה עם ירדן" -- ללא אזכור מפורש של הרחבת התיישבות יזומה.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "sec-2", stanceValue: 2 },
   {
     partyId: "yisrael-beiteinu",
@@ -395,7 +583,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://www.israelhayom.co.il/news/geopolitics/article/18964361",
     sourceNote:
-      'ליברמן: "העימות הבא עם איראן הוא לא שאלה של אם, אלא מתי" - קורא למוכנות ישראלית תקיפה ועצמאית.',
+      'ליברמן: "צריך לשגר על איראן 400 טילים" (ישיבת סיעה), וקורא להקמת חיל חדש שיוכל "לפגוע בכל נקודה באיראן תוך 12 דקות", תוך ביקורת על "תפיסת הכלה" פסיבית מדי של הממשלה.',
   },
   {
     partyId: "yisrael-beiteinu",
@@ -408,18 +596,53 @@ export const partyStances: PartyStance[] = [
   { partyId: "yisrael-beiteinu", questionId: "sec-12", stanceValue: 0 },
   { partyId: "yisrael-beiteinu", questionId: "sec-13", stanceValue: 1 },
   { partyId: "yisrael-beiteinu", questionId: "eco-1", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "eco-2", stanceValue: -1 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "eco-2",
+    stanceValue: 0,
+    sourceUrl: "https://beytenu.org.il/%D7%94%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%94%D7%9B%D7%9C%D7%9B%D7%9C%D7%99%D7%AA-%D7%A9%D7%9C-%D7%90%D7%91%D7%99%D7%92%D7%93%D7%95%D7%A8-%D7%9C%D7%99%D7%91%D7%A8%D7%9E%D7%9F/",
+    sourceNote:
+      'התוכנית הכלכלית הרשמית של ליברמן כוללת העלאת קצבת קשישים ב-20% והגדלת המענק השנתי לניצולי שואה מ-6,500 ל-8,000 ש"ח -- הגדלה ממוקדת של קצבאות מסוימות, לצד התנגדות עקבית להעלאות רוחביות פופוליסטיות (ר\' eco-4). עמדה מעורבת/סלקטיבית ולא גורפת.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "eco-3", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "eco-4", stanceValue: -1 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "eco-4",
+    stanceValue: -1,
+    sourceUrl: "https://www.ynet.co.il/economy/article/skjbe11be5",
+    sourceNote:
+      'ליברמן הגיב בסרקזם לדרישה להעלות שכר מינימום ל-6,500 ש"ח ("למה לא ל-8,500?"), והזהיר כי העלאה משמעותית "תתגלגל לצרכן ותגרום לעליות מחירים ולאינפלציה" ותייצר אבטלה.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "eco-5", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "eco-6", stanceValue: 0 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "eco-6",
+    stanceValue: 1,
+    sourceUrl: "https://beytenu.org.il/party-platform/",
+    sourceNote:
+      "המצע הרשמי כולל תוכנית פעילה להגדלת היצע הדיור (זירוז רישוי, שיטות בנייה תעשייתיות, תמריצים לרשויות מקומיות) ומשכנתאות מסובסדות עד 90% משווי הדירה לזוגות צעירים ומשוחררי צבא -- דגש על הרחבת היצע/סבסוד ביקוש ולא על דיור ציבורי קלאסי.",
+  },
   { partyId: "yisrael-beiteinu", questionId: "eco-7", stanceValue: 1 },
   { partyId: "yisrael-beiteinu", questionId: "eco-8", stanceValue: -1 },
   { partyId: "yisrael-beiteinu", questionId: "eco-9", stanceValue: 2 },
   { partyId: "yisrael-beiteinu", questionId: "eco-10", stanceValue: -1 },
   { partyId: "yisrael-beiteinu", questionId: "eco-11", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "eco-12", stanceValue: 2 },
-  { partyId: "yisrael-beiteinu", questionId: "inf-1", stanceValue: 1 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "eco-12",
+    stanceValue: 2,
+    sourceUrl: "https://beytenu.org.il/party-platform/",
+    sourceNote:
+      'המצע הרשמי קורא במפורש ל"הסרת חסמים, צמצום הרגולציה", ביטול בלעדיות יבואנים, ופירוק "מועצות הייצור" (חלב, ירקות) המגנות על יצרנים מקומיים.',
+  },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "inf-1",
+    stanceValue: 0,
+    sourceUrl: "https://liberman.org.il/%D7%A2%D7%A7%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+    sourceNote:
+      'דף העקרונות של ליברמן מציע גם הרחבת מסילות רכבת לדרום וגם הרחבת כביש 90 -- תמיכה מקבילה בתחבורה ציבורית וגם בתשתית כבישים, לא הפניית "עיקר" התקציב לרכבות על חשבון כבישים.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "inf-2", stanceValue: 0 },
   { partyId: "yisrael-beiteinu", questionId: "inf-3", stanceValue: 1 },
   { partyId: "yisrael-beiteinu", questionId: "inf-4", stanceValue: 0 },
@@ -431,7 +654,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://news.walla.co.il/item/3062892",
     sourceNote:
-      "ישראל ביתנו יזמה בעצמה הצעת חוק להפעלת תחבורה ציבורית בשבת (ח\"כ עודד פורר ויוליה מלינובסקי).",
+      'ישראל ביתנו יזמה הצעת חוק להפעלת תחבורה ציבורית בשבת (ח"כים עודד פורר ויוליה מלינובסקי).',
   },
   { partyId: "yisrael-beiteinu", questionId: "rel-3", stanceValue: -2 },
   {
@@ -440,7 +663,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://www.ynet.co.il/articles/0,7340,L-5573716,00.html",
     sourceNote:
-      'ליברמן, במכתב לקהילה הגאה: "נדרוש נישואים אזרחיים במו"מ הקואליציוני" - עמדה עקבית של המפלגה לאורך שנים.',
+      'המצע הרשמי (2026: "מתן אפשרות לנישואים וגירושים אזרחיים") ודף העקרונות של ליברמן ("מיסוד נישואים אזרחיים לכל הזוגות שיחפצו בכך") חוזרים על ההתחייבות -- עמדה עקבית לאורך שנים.',
   },
   {
     partyId: "yisrael-beiteinu",
@@ -448,74 +671,130 @@ export const partyStances: PartyStance[] = [
     stanceValue: -2,
     sourceUrl: "https://www.zman.co.il/652488/",
     sourceNote:
-      "ליברמן הוביל עוד ב-2018, כשר הביטחון, הצעת חוק להסדרת גיוס חרדים ולביטול הפטור בפועל; ישראל ביתנו ידועה כמפלגה החילונית-לאומית המובילה את הדרישה לגיוס שוויוני.",
+      "עמדת יסוד-המפלגה: שוויון בנטל הגיוס וביטול פטור הישיבות -- סמן זהות מרכזי של המפלגה החילונית-לאומית.",
   },
   { partyId: "yisrael-beiteinu", questionId: "rel-7", stanceValue: -2 },
   { partyId: "yisrael-beiteinu", questionId: "rel-8", stanceValue: 2 },
   { partyId: "yisrael-beiteinu", questionId: "rel-9", stanceValue: -2 },
   { partyId: "yisrael-beiteinu", questionId: "rel-10", stanceValue: 2 },
   { partyId: "yisrael-beiteinu", questionId: "rel-11", stanceValue: 2 },
-  { partyId: "yisrael-beiteinu", questionId: "jud-1", stanceValue: -1 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "jud-1",
+    stanceValue: -2,
+    sourceUrl: "https://beytenu.org.il/party-platform/",
+    sourceNote:
+      'המצע הרשמי: "התנגדות לחוק הצרפתי ולפסקת ההתגברות". ליברמן (מרץ 2023): "פסקת ההתגברות IN -- שוויון בנטל OUT... העברת פסקת ההתגברות היא יריקה בפרצופם של חיילי צה"ל ומשרתי המילואים".',
+  },
   {
     partyId: "yisrael-beiteinu",
     questionId: "jud-2",
     stanceValue: 1,
     sourceUrl: "https://news.walla.co.il/item/3855572",
     sourceNote:
-      "עמדת ישראל ביתנו: להשאיר את הוועדה לבחירת שופטים כפי שהיא, ולהקים לצידה בית משפט חוקתי נפרד שחבריו ייבחרו על ידי נבחרי ציבור - עמדת ביניים בין הרפורמה למצב הקיים.",
+      'עמדת ישראל ביתנו: להשאיר את הוועדה הקיימת לבחירת שופטים כפי שהיא, ולהקים לצידה בית משפט חוקתי נפרד שחבריו ייבחרו ע"י נבחרי ציבור -- עמדת ביניים המשמרת בפועל את עצמאות ביהמ"ש העליון הקיים.',
   },
   {
     partyId: "yisrael-beiteinu",
     questionId: "jud-3",
-    stanceValue: 0,
+    stanceValue: -2,
     sourceUrl: "https://news.walla.co.il/item/3855572",
     sourceNote:
-      "ליברמן מתנגד לשינוי הרכב הוועדה הקיימת, ומציע במקום זאת בית משפט חוקתי נפרד עם שופטים שנבחרים על ידי נבחרי ציבור.",
+      'אותה כתבה קובעת מפורשות שליברמן "מתנגד לשינוי הרכב הוועדה הקיימת", ומציע במקומה בית משפט חוקתי נפרד -- תוך השארת הוועדה הקיימת ללא שינוי הרכב.',
   },
   { partyId: "yisrael-beiteinu", questionId: "jud-5", stanceValue: -1 },
   { partyId: "yisrael-beiteinu", questionId: "jud-7", stanceValue: -1 },
   { partyId: "yisrael-beiteinu", questionId: "jud-8", stanceValue: 1 },
   { partyId: "yisrael-beiteinu", questionId: "jud-9", stanceValue: 0 },
-  { partyId: "yisrael-beiteinu", questionId: "gov-1", stanceValue: 2 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "gov-1",
+    stanceValue: 2,
+    sourceUrl: "https://www.ynet.co.il/news/article/yokra14680635",
+    sourceNote:
+      "ליברמן דרש וחתם על התחייבות שהממשלה הבאה תקים ועדת חקירה ממלכתית כבר בישיבתה הראשונה.",
+  },
   { partyId: "yisrael-beiteinu", questionId: "gov-3", stanceValue: 1 },
   {
     partyId: "yisrael-beiteinu",
     questionId: "gov-4",
-    stanceValue: 1,
-    sourceUrl: "https://www.calcalist.co.il/local/articles/0,7340,L-3798715,00.html",
+    stanceValue: 2,
+    sourceUrl: "https://liberman.org.il/%D7%A2%D7%A7%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
     sourceNote:
-      'ליברמן קידם ביוזמה אישית הצעת חוק שתמנע מח\"כ שהוגש נגדו כתב אישום פלילי לכהן כראש ממשלה.',
+      "דף העקרונות הנוכחי (2026) קובע איסור מפורש על אדם שהוגש נגדו כתב אישום מלהרכיב ממשלה, לכהן כנשיא, או לעמוד בראש מפלגה.",
   },
   { partyId: "yisrael-beiteinu", questionId: "gov-5", stanceValue: 0 },
   { partyId: "yisrael-beiteinu", questionId: "soc-1", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "soc-2", stanceValue: 0 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "soc-2",
+    stanceValue: 1,
+    sourceUrl: "https://liberman.org.il/%D7%A2%D7%A7%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+    sourceNote:
+      'דף העקרונות של ליברמן קובע "מיסוד נישואים אזרחיים לכל הזוגות שיחפצו בכך" -- ניסוח שאינו מבחין לפי מגדר בני הזוג, אך אין הצהרה ממוקדת על זכויות זוגיות חד-מינית מעבר לכך, ותועדו גם אמירות מסויגות של ליברמן כלפי הקהילה הגאה בעבר.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "soc-3", stanceValue: 0 },
   { partyId: "yisrael-beiteinu", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "yisrael-beiteinu", questionId: "soc-6", stanceValue: 0 },
+  {
+    partyId: "yisrael-beiteinu",
+    questionId: "soc-6",
+    stanceValue: 2,
+    sourceUrl: "https://beytenu.org.il/%D7%94%D7%A6%D7%A2%D7%AA-%D7%97%D7%95%D7%A7-%D7%99%D7%99%D7%A6%D7%95%D7%92-%D7%94%D7%95%D7%9C%D7%9D-%D7%9C%D7%A0%D7%A9%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%9B%D7%A0%D7%A1/",
+    sourceNote:
+      'המצע הרשמי כולל התחייבות מפורשת ל"הבטחת ייצוג הולם לנשים ברשימות המתמודדות לכנסת". ח"כית שרון ניר (ישראל ביתנו) יזמה ביולי 2024 הצעת חוק לייצוג הולם לנשים בכנסת.',
+  },
   { partyId: "yisrael-beiteinu", questionId: "soc-7", stanceValue: 1 },
   { partyId: "yisrael-beiteinu", questionId: "soc-10", stanceValue: 0 },
-  { partyId: "hademocratim", questionId: "sec-1", stanceValue: -1 },
+  {
+    partyId: "hademocratim",
+    questionId: "sec-1",
+    stanceValue: -2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (אפריל 2026, פרק 4) קובע במפורש "לא לסיפוח, כן להיפרדות אחראית" ו"עצירת כל מהלכי סיפוח -- חוקיים, זוחלים או בפועל".',
+  },
   { partyId: "hademocratim", questionId: "sec-2", stanceValue: -1 },
-  { partyId: "hademocratim", questionId: "sec-3", stanceValue: 1 },
+  {
+    partyId: "hademocratim",
+    questionId: "sec-3",
+    stanceValue: 2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 4) קורא ל"יוזמה מדינית לפתרון הסכסוך הפלסטיני... היפרדות אחראית" הכוללת "פירוז מלא של המדינה הפלסטינית העתידית -- ללא צבא או איום טרור".',
+  },
   { partyId: "hademocratim", questionId: "sec-4", stanceValue: 1 },
   { partyId: "hademocratim", questionId: "sec-5", stanceValue: 0 },
   { partyId: "hademocratim", questionId: "sec-6", stanceValue: -1 },
   { partyId: "hademocratim", questionId: "sec-7", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "sec-8", stanceValue: -1 },
   { partyId: "hademocratim", questionId: "sec-9", stanceValue: 2 },
-  { partyId: "hademocratim", questionId: "sec-10", stanceValue: -1 },
+  {
+    partyId: "hademocratim",
+    questionId: "sec-10",
+    stanceValue: 1,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 4) קורא במפורש ל"דוקטרינה חדשה של יוזמה אסטרטגית מונעת", הכוללת "פגיעה מקדימה בהתבססות אויב על גבולותינו" ו"דוקטרינת הרתעה חדה וברורה"; מדגיש גם פעולה בשותפות עם ארה"ב ומדינות ערביות מתונות, לא הרפתקנות חד-צדדית.',
+  },
   {
     partyId: "hademocratim",
     questionId: "sec-11",
     stanceValue: -2,
-    sourceUrl: "https://www.mako.co.il/news-israel-elections/2026/Article-53c6ffa50321f91027.htm",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      'התוכנית המדינית של יאיר גולן קוראת לפעולה מתואמת עם ארה"ב, כולל קידום הסכם גרעין חדש לאיראן יחד עם האמריקאים - ולא פעולה עצמאית.',
+      'המצע הרשמי מדגיש "חיזוק השותפות האסטרטגית עם ארה"ב" כאבן יסוד; יאיר גולן (גלובס): "לא נוכל להילחם באיראן לבד".',
   },
   { partyId: "hademocratim", questionId: "sec-12", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "sec-13", stanceValue: 1 },
   { partyId: "hademocratim", questionId: "eco-1", stanceValue: -2 },
-  { partyId: "hademocratim", questionId: "eco-2", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "eco-2",
+    stanceValue: 2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 5, "שיפור השירותים החברתיים") קובע יעד מפורש: "הגדלת השקעה בשירותים החברתיים עם עדיפות ברורה לאוכלוסיות מוחלשות -- כולל בעלי מוגבלויות, קשישים, משפחות חד-הוריות ונוער בסיכון".',
+  },
   { partyId: "hademocratim", questionId: "eco-3", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "eco-4", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "eco-5", stanceValue: 2 },
@@ -523,75 +802,124 @@ export const partyStances: PartyStance[] = [
     partyId: "hademocratim",
     questionId: "eco-6",
     stanceValue: 2,
-    sourceUrl: "https://democrats.org.il/6154-2/",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      'הדמוקרטים הניחו הצעת חוק יסוד: זכויות חברתיות, הקובעת "זכות לדיור הולם ובר השגה" כזכות יסוד.',
+      'המצע הרשמי (פרקים 5 ו-7) קורא ל"מימוש הזכות לדיור", "שחרור שוק הקרקעות הממשלתיות -- להוזלת הדיור" ול"תוכנית ארצית לדיור ציבורי".',
   },
   { partyId: "hademocratim", questionId: "eco-7", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "eco-8", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "eco-9", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "eco-10", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "eco-11", stanceValue: 2 },
-  { partyId: "hademocratim", questionId: "eco-12", stanceValue: 1 },
-  { partyId: "hademocratim", questionId: "inf-1", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "eco-12",
+    stanceValue: 1,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 5, "הורדת יוקר המחיה") קורא במפורש ל"פתיחת שוק המזון ליבוא ותחרות, כולל ביטול חסמי תקינה מיותרים".',
+  },
+  {
+    partyId: "hademocratim",
+    questionId: "inf-1",
+    stanceValue: 1,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי תומך בהעדפת תחבורה ציבורית ("נשקיע במערכת תחבורה... המתעדפת הולכי רגל, תחבורה ציבורית, ואופניים"), אך מזכיר גם "כבישים, רכבות, אנרגיה מתחדשת" כהשקעות תשתית מקבילות, לא הפניית עיקר התקציב לרכבות דווקא.',
+  },
   { partyId: "hademocratim", questionId: "inf-2", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "inf-3", stanceValue: -1 },
   { partyId: "hademocratim", questionId: "inf-4", stanceValue: -1 },
   { partyId: "hademocratim", questionId: "inf-5", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "inf-6", stanceValue: 2 },
-  { partyId: "hademocratim", questionId: "rel-2", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "rel-2",
+    stanceValue: 1,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 6): "תופעל תחבורה ציבורית במתכונת מצומצמת באזורים חילוניים או מעורבים, תוך שמירה על צביון השבת באזורים דתיים. הרשויות המקומיות יוסמכו להחליט על היקף השירות" -- תחבורה חלקית ומוסמכת-מקומית, לא הפעלה מלאה גורפת בכל הארץ.',
+  },
   { partyId: "hademocratim", questionId: "rel-3", stanceValue: -2 },
   {
     partyId: "hademocratim",
     questionId: "rel-4",
     stanceValue: 2,
-    sourceUrl: "https://www.ceci.org.il/ezgov/%D7%94%D7%A6%D7%A2%D7%AA-%D7%97%D7%95%D7%A7-%D7%A0%D7%99%D7%A9%D7%95%D7%90%D7%99%D7%9D-%D7%90%D7%96%D7%A8%D7%97%D7%99%D7%99%D7%9D-%D7%94%D7%AA%D7%A9%D7%A4%D7%92-2022-%D7%A9%D7%9C-%D7%97%D7%94%D7%9B-2/",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      "מפלגת אופוזיציה/מחנה חילוני התומכת בקו הכללי של הצעות חוק לנישואין אזרחיים שהונחו על שולחן הכנסת (למשל הצעת ח\"כ טופורובסקי, 2022).",
+      'המצע הרשמי (פרק 6): "הדמוקרטים יפעלו להקמת מערך נישואין אזרחיים מקביל לרבנות... נישואין אלו יעניקו לנישאים בהם זכויות מלאות ושוות", וכן "גירושין בבתי דין אזרחיים".',
   },
   {
     partyId: "hademocratim",
     questionId: "rel-5",
     stanceValue: -2,
-    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1t00cyqgje",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      "מפלגת אופוזיציה המבקרת את הממשלה על שהיא מאיצה חקיקה שנויה במחלוקת מחד, ובולמת גיוס חרדים משמעותי מאידך, ודורשת שוויון בנטל.",
+      'המצע הרשמי (פרק 1, "שוויון בנטל"): "נחייב שירות צבאי לפי החוק הקיים, תוך ביטול פטורים וחקיקה סקטוריאלית". יאיר גולן טען בנפרד שאי אפשר "לגייס את כל החרדים מחר בבוקר" והציע מסלולי "שנת שירות" מגוונים לצד השירות הצבאי כעוגן מרכזי -- הסתייגות מקצב היישום, לא מכיוון העמדה.',
   },
   { partyId: "hademocratim", questionId: "rel-7", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "rel-8", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "rel-9", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "rel-10", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "rel-11", stanceValue: 2 },
-  { partyId: "hademocratim", questionId: "jud-1", stanceValue: -2 },
+  {
+    partyId: "hademocratim",
+    questionId: "jud-1",
+    stanceValue: -2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 3): "נקבע בחוק כי שום רשות לא תשלוט ברעותה, ונבטיח מניעת חקיקה עוקפת בג"ץ או פסקת התגברות גורפת".',
+  },
   {
     partyId: "hademocratim",
     questionId: "jud-2",
     stanceValue: 2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      "מפלגת אופוזיציה מרכזית שהובילה את המחאה ההמונית נגד הרפורמה המשפטית של 2023 (שכללה גם את שינוי הרכב הוועדה לבחירת שופטים), ותומכת בשימור עצמאות בית המשפט העליון.",
+      'המצע הרשמי (פרק 3): "נחזק את עצמאות הרשות השופטת ונגן על סמכות הביקורת החוקתית של בג"ץ".',
   },
   {
     partyId: "hademocratim",
     questionId: "jud-3",
     stanceValue: -2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
     sourceNote:
-      "מפלגת אופוזיציה שהתנגדה לשינוי הרכב הוועדה לבחירת שופטים לרוב קואליציוני, כחלק מהתנגדותה למכלול הרפורמה המשפטית של 2023.",
+      'המצע הרשמי (פרק 3, "חיזוק שומרי הסף"): "מינויים מקצועיים בלבד על ידי ועדות בלתי תלויות" -- התנגדות מפורשת לרוב פוליטי בוועדה לבחירת שופטים.',
   },
   { partyId: "hademocratim", questionId: "jud-5", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "jud-7", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "jud-8", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "jud-9", stanceValue: -2 },
-  { partyId: "hademocratim", questionId: "gov-1", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "gov-1",
+    stanceValue: 2,
+    sourceUrl: "https://www.israelhayom.co.il/news/local/article/19259921",
+    sourceNote:
+      'יאיר גולן: "חייבת לקום ועדת חקירה ממלכתית שתחשוף את האמת" -- עמדה עקבית וידועה של גולן וסיעתו, חוזרת בכותרות עצמאיות נוספות (מאקו, מעריב).',
+  },
   { partyId: "hademocratim", questionId: "gov-3", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "gov-4", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "gov-5", stanceValue: 2 },
   { partyId: "hademocratim", questionId: "soc-1", stanceValue: -2 },
-  { partyId: "hademocratim", questionId: "soc-2", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "soc-2",
+    stanceValue: 2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 6) כולל את "זוגות להט"בים" באופן מפורש במסגרת מערך הנישואין האזרחיים המוצע, עם "זכויות מלאות ושוות".',
+  },
   { partyId: "hademocratim", questionId: "soc-3", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "hademocratim", questionId: "soc-6", stanceValue: 2 },
+  {
+    partyId: "hademocratim",
+    questionId: "soc-6",
+    stanceValue: 2,
+    sourceUrl: "https://democrats.org.il/wp-content/uploads/2026/04/vision0426.pdf",
+    sourceNote:
+      'המצע הרשמי (פרק 1, "שוויון"): "שוויון הזדמנויות על ידי שילוב ערבים, חרדים, עולים, נשים ותושבי פריפריה בכל דרגי השירות הציבורי, האקדמיה, וההנהגה", וכן "שוויון מגדרי" כערך יסוד מוצהר.',
+  },
   { partyId: "hademocratim", questionId: "soc-7", stanceValue: -2 },
   { partyId: "hademocratim", questionId: "soc-10", stanceValue: 2 },
   { partyId: "shas", questionId: "sec-1", stanceValue: 1 },
@@ -600,9 +928,9 @@ export const partyStances: PartyStance[] = [
     partyId: "shas",
     questionId: "sec-3",
     stanceValue: -1,
-    sourceUrl: "https://www.kan.org.il/content/kan-news/politic/953432/",
+    sourceUrl: "https://www.ynet.co.il/news/article/skjasx8or",
     sourceNote:
-      'הכנסת אישרה בפברואר 2024 ברוב גדול החלטת ממשלה לפיה ישראל תתנגד להטלת מדינה פלסטינית מבחוץ; ש"ס תמכה כחלק מהקואליציה, אם כי הנושא אינו בראש סדר העדיפויות המפלגתי שלה.',
+      'הכנסת אישרה (פברואר 2024, ביוזמת ח"כ זאב אלקין) הצהרה שהכנסת מתנגדת להקמת מדינה פלסטינית; חברי ש"ס הצביעו בעד, אך אריה דרעי עצמו (כמו נתניהו וגלנט) לא השתתף בהצבעה.',
   },
   { partyId: "shas", questionId: "sec-4", stanceValue: -1 },
   { partyId: "shas", questionId: "sec-5", stanceValue: 1 },
@@ -610,7 +938,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "shas", questionId: "sec-7", stanceValue: 0 },
   { partyId: "shas", questionId: "sec-8", stanceValue: 1 },
   { partyId: "shas", questionId: "sec-9", stanceValue: -1 },
-  { partyId: "shas", questionId: "sec-10", stanceValue: 1 },
+  {
+    partyId: "shas",
+    questionId: "sec-10",
+    stanceValue: -1,
+    sourceUrl: "https://www.c14.co.il/article/1580025",
+    sourceNote:
+      'גדי איזנקוט טען בריאיון שדרעי התנגד לתגובה עוצמתית בתוך איראן לאחר מתקפת הטילים של אפריל 2024. בישיבת קבינט מצומצם דרעי אמר "מספיק עם הרעיונות לתקוף איראן ולבנון... צריך להיות ריאלי" -- בניגוד לקו התוקפני של סמוטריץ\' ובן גביר; דרעי הכחיש בדיעבד שדובר ב"נזיפה".',
+  },
   { partyId: "shas", questionId: "sec-11", stanceValue: 0 },
   { partyId: "shas", questionId: "sec-12", stanceValue: -1 },
   { partyId: "shas", questionId: "sec-13", stanceValue: 0 },
@@ -619,9 +954,9 @@ export const partyStances: PartyStance[] = [
     partyId: "shas",
     questionId: "eco-2",
     stanceValue: 2,
-    sourceUrl: "https://www.ynet.co.il/economy/article/rjcptaa2jl",
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/h1qxiymzjg",
     sourceNote:
-      'שר העבודה הודה ליו"ר ש"ס אריה דרעי על מאבקו מול פקידי האוצר בעד עדכון קצבאות הביטוח הלאומי לאוכלוסיות מוחלשות בתקציב 2025.',
+      'דרעי, נתניהו וסמוטריץ\' סיכמו לבטל את הקפאת הקצבאות -- חוץ מקצבאות הילדים שיוקפאו; דרעי התנגד לתוכנית האוצר להקפיא קצבאות זקנה/נכות (חיסכון של כ-5 מיליארד ש"ח בשנה) והביא לביטולה, במימון חלופי מהעלאת דמי ביטוח לאומי.',
   },
   { partyId: "shas", questionId: "eco-3", stanceValue: -1 },
   {
@@ -630,7 +965,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 1,
     sourceUrl: "https://www.ynet.co.il/economy/article/rjcptaa2jl",
     sourceNote:
-      'דרעי עמד מול פקידי האוצר על כך ששכר המינימום לא יוקפא, והוא אכן עלה ל-6,247.67 ש"ח החל מאפריל 2025.',
+      'שכר המינימום עלה מ-5,880 ל-6,247.67 ש"ח החל מ-1.4.2025 (שר העבודה יואב בן צור, ש"ס, חתם על הצו); המגמה נמשכה גם באפריל 2026 (עלייה נוספת ל-6,443.85 ש"ח).',
   },
   { partyId: "shas", questionId: "eco-5", stanceValue: 1 },
   { partyId: "shas", questionId: "eco-6", stanceValue: 1 },
@@ -652,7 +987,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: -2,
     sourceUrl: "https://www.ynet.co.il/articles/0,7340,L-5612495,00.htm",
     sourceNote:
-      "ליצמן ודרעי (מנהיגי ש\"ס ויהדות התורה) דרשו מנתניהו לחוקק שימור מפורש של הסטטוס-קוו - אין תחבורה ציבורית בשבת.",
+      'דרעי וליצמן דרשו כחלק ממו"מ קואליציוני לעגן בחוק את שימור הסטטוס-קוו (אין תחבורה ציבורית בשבת) -- התנגדות עקרונית עקבית ומתועדת היטב לאורך שנים.',
   },
   { partyId: "shas", questionId: "rel-3", stanceValue: 2 },
   { partyId: "shas", questionId: "rel-4", stanceValue: -2 },
@@ -662,7 +997,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%99%D7%95%D7%A1",
     sourceNote:
-      "הממשלה (בראשות הליכוד, עם ש\"ס, יהדות התורה, עוצמה יהודית והציונות הדתית) קיבלה ב-2023 את החלטה 682 שדחתה את גיוס תלמידי הישיבות עד לחקיקה מוסכמת, בפועל ממשיכה את הפטור בפועל.",
+      'ביוני 2023 החליטה הממשלה לקדם חקיקה חדשה בנושא גיוס, תוך קביעה שבתקופת הביניים לא תיאכף חובת הגיוס (בפועל המשך הפטור). ש"ס ממשיכה להתנגד לחקיקת גיוס כפוי גם ב-2026.',
   },
   { partyId: "shas", questionId: "rel-7", stanceValue: 2 },
   { partyId: "shas", questionId: "rel-8", stanceValue: -2 },
@@ -674,9 +1009,9 @@ export const partyStances: PartyStance[] = [
     partyId: "shas",
     questionId: "jud-2",
     stanceValue: -2,
-    sourceUrl: "https://m.calcalist.co.il/Article.aspx?guid=r1mr0bmqs",
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1mr0bmqs",
     sourceNote:
-      "חלק ממתווה הרפורמה המשפטית של השר לוין (2023), שכלל גם שינוי הרכב הוועדה לבחירת שופטים לטובת רוב קואליציוני וגם ביטול עילת הסבירות ופסקת התגברות.",
+      'הצגת הרפורמה המשפטית של השר לוין (4.1.2023), הכוללת ביטול עילת הסבירות ("לא עוד ביטול החלטות ממשלה חוקיות בטענת אי-סבירות") וחקיקת פסקת התגברות ברוב 61.',
   },
   {
     partyId: "shas",
@@ -684,24 +1019,52 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://www.tachlith.org.il/q-and-a-levin-saar-supreme-court-selection/",
     sourceNote:
-      "מתווה לוין-סער (2025) להענקת רוב לנציגי הקואליציה/נבחרי ציבור בוועדה לבחירת שופטים.",
+      "מתווה לוין-סער (פורסם 16.1.2025) לשינוי הרכב הוועדה לבחירת שופטים -- 4 נציגי קואליציה, 2 נציגי אופוזיציה ו-3 שופטי עליון, עם רוב מוכרע לנציגים פוליטיים ברוב מקרים.",
   },
   { partyId: "shas", questionId: "jud-5", stanceValue: 2 },
   { partyId: "shas", questionId: "jud-7", stanceValue: 2 },
   { partyId: "shas", questionId: "jud-8", stanceValue: -2 },
   { partyId: "shas", questionId: "jud-9", stanceValue: 2 },
-  { partyId: "shas", questionId: "gov-1", stanceValue: -1 },
+  {
+    partyId: "shas",
+    questionId: "gov-1",
+    stanceValue: -1,
+    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1ect5kmbx",
+    sourceNote:
+      'הצעת החוק להקמת ועדת חקירה פוליטית חלופית (במקום ממלכתית) עברה בקריאה טרומית ב-24.12.2025 ברוב של 50-48; חלק מחברי ש"ס נעדרו מההצבעה במחאה על אי-קידום "חוק ההשתמטות" (חוק הגיוס).',
+  },
   { partyId: "shas", questionId: "gov-3", stanceValue: -2 },
-  { partyId: "shas", questionId: "gov-4", stanceValue: -2 },
+  {
+    partyId: "shas",
+    questionId: "gov-4",
+    stanceValue: -2,
+    sourceUrl: "https://news.walla.co.il/item/3818727",
+    sourceNote:
+      'ש"ס (22.2.2026): "ש"ס תומכת בחוק של בן גביר. הסמכות הבלעדית למנות ולפטר שרים שייכת לרה"מ בלבד, וכך ראוי במדינה דמוקרטית" -- "חוק דרעי 2", תיקון לחוק יסוד: הממשלה שנועד לבטל את סמכות בג"ץ למנוע מינוי/לפסול שרים בעקבות כתב אישום.',
+  },
   { partyId: "shas", questionId: "gov-5", stanceValue: -1 },
   { partyId: "shas", questionId: "soc-1", stanceValue: 2 },
   { partyId: "shas", questionId: "soc-2", stanceValue: -2 },
   { partyId: "shas", questionId: "soc-3", stanceValue: 2 },
   { partyId: "shas", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "shas", questionId: "soc-6", stanceValue: -2 },
+  {
+    partyId: "shas",
+    questionId: "soc-6",
+    stanceValue: -2,
+    sourceUrl: "https://www.c14.co.il/%D7%94%D7%93%D7%A8%D7%AA-%D7%A0%D7%A9%D7%99%D7%9D-%D7%94%D7%94%D7%A6%D7%94%D7%A8%D7%94-%D7%94%D7%9E%D7%A4%D7%AA%D7%99%D7%A2%D7%94-%D7%A9%D7%9C-%D7%99%D7%95%D7%A8-%D7%A1-%D7%90%D7%A8%D7%99/",
+    sourceNote:
+      'כמקובל במפלגות החרדיות, ש"ס אינה מציבה נשים ברשימתה לכנסת כלל; דרעי הצהיר בנפרד שהנהגה פוליטית "זה לא המקום הטבעי" של נשים.',
+  },
   { partyId: "shas", questionId: "soc-7", stanceValue: 2 },
   { partyId: "shas", questionId: "soc-10", stanceValue: -2 },
-  { partyId: "yahadut-hatorah", questionId: "sec-1", stanceValue: 1 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "sec-1",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/news/article/r1linvomjx",
+    sourceNote:
+      'יצחק גולדקנופף (יו"ר יהדות התורה) קידם באופן אישי התיישבות יהודית בעזה ("ההתיישבות היהודית כאן היא התשובה לטבח הנורא", נוב\' 2024), אך משה גפני (יו"ר דגל התורה) התנער מכך בפומבי: "אתה לא מייצג אותי בשום צורה" -- אין עמדה מפלגתית אחידה.',
+  },
   { partyId: "yahadut-hatorah", questionId: "sec-2", stanceValue: 0 },
   { partyId: "yahadut-hatorah", questionId: "sec-3", stanceValue: 0 },
   { partyId: "yahadut-hatorah", questionId: "sec-4", stanceValue: 0 },
@@ -715,11 +1078,32 @@ export const partyStances: PartyStance[] = [
   { partyId: "yahadut-hatorah", questionId: "sec-12", stanceValue: 0 },
   { partyId: "yahadut-hatorah", questionId: "sec-13", stanceValue: 0 },
   { partyId: "yahadut-hatorah", questionId: "eco-1", stanceValue: -1 },
-  { partyId: "yahadut-hatorah", questionId: "eco-2", stanceValue: 1 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "eco-2",
+    stanceValue: 1,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%93%D7%95%D7%AA_%D7%94%D7%AA%D7%95%D7%A8%D7%94",
+    sourceNote:
+      'המפלגה, בניגוד לשמרנותה הדתית-חברתית, מאמצת עמדות כלכליות "סוציאל-דמוקרטיות" הנובעות מהחולשה הסוציו-אקונומית של ציבור הבוחרים שלה (משפחות ברוכות ילדים התלויות בקצבאות).',
+  },
   { partyId: "yahadut-hatorah", questionId: "eco-3", stanceValue: -1 },
-  { partyId: "yahadut-hatorah", questionId: "eco-4", stanceValue: 1 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "eco-4",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/economy/article/hjecq9vby",
+    sourceNote:
+      'ח"כ יעקב אשר (יהדות התורה) חתם, יחד עם ח"כים מהקואליציה והאופוזיציה, על הצעת חוק להעלאת שכר המינימום מ-29.12 ש"ח ל-40 ש"ח לשעה.',
+  },
   { partyId: "yahadut-hatorah", questionId: "eco-5", stanceValue: 1 },
-  { partyId: "yahadut-hatorah", questionId: "eco-6", stanceValue: 1 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "eco-6",
+    stanceValue: 1,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%A6%D7%97%D7%A7_%D7%92%D7%95%D7%9C%D7%93%D7%A7%D7%A0%D7%95%D7%A4%D7%A3",
+    sourceNote:
+      "בתקופת כהונתו של יצחק גולדקנופף כשר השיכון (דצמ' 2022 - יוני 2025), לפי מחקר המכון הישראלי לדמוקרטיה, שיעור ההשתתפות של הציבור החרדי במסלולי דיור מוזל/בר-השגה היה גבוה במאות אחוזים מחלקו באוכלוסייה.",
+  },
   { partyId: "yahadut-hatorah", questionId: "eco-7", stanceValue: -1 },
   { partyId: "yahadut-hatorah", questionId: "eco-8", stanceValue: 1 },
   { partyId: "yahadut-hatorah", questionId: "eco-9", stanceValue: -2 },
@@ -736,26 +1120,40 @@ export const partyStances: PartyStance[] = [
     partyId: "yahadut-hatorah",
     questionId: "rel-2",
     stanceValue: -2,
-    sourceUrl: "https://www.ynet.co.il/articles/0,7340,L-5612495,00.htm",
+    sourceUrl: "https://www.ynet.co.il/judaism/article/hyruplhvs",
     sourceNote:
-      "ליצמן ודרעי (מנהיגי ש\"ס ויהדות התורה) דרשו מנתניהו לחוקק שימור מפורש של הסטטוס-קוו - אין תחבורה ציבורית בשבת.",
+      'בשאלון תשובות מלא ומעודכן של יהדות התורה: "השבת היא יום המנוחה הרשמי, וכך חייב להישמר הסטטוס-קוו באופן מובהק".',
   },
   { partyId: "yahadut-hatorah", questionId: "rel-3", stanceValue: 2 },
-  { partyId: "yahadut-hatorah", questionId: "rel-4", stanceValue: -2 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "rel-4",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/judaism/article/hyruplhvs",
+    sourceNote:
+      'אותו שאלון: "הסטטוס-קוו הלאומי חייב להישמר גם בנושא זה" (נישואין אזרחיים), תוך שהמפלגה מגדירה נישואין אזרחיים כפריצת גבול המאיימת על הזהות היהודית.',
+  },
   {
     partyId: "yahadut-hatorah",
     questionId: "rel-5",
     stanceValue: 2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%99%D7%95%D7%A1",
+    sourceUrl: "https://www.ynet.co.il/judaism/article/hyruplhvs",
     sourceNote:
-      "הממשלה (בראשות הליכוד, עם ש\"ס, יהדות התורה, עוצמה יהודית והציונות הדתית) קיבלה ב-2023 את החלטה 682 שדחתה את גיוס תלמידי הישיבות עד לחקיקה מוסכמת, בפועל ממשיכה את הפטור בפועל.",
+      'אותו שאלון, בפרק "גיוס חרדים ולימודי ליבה": "כל חוק גיוס חייב לאפשר לכל תלמיד החפץ בכך ומתחייב להקדיש את שנותיו למטרה זו בלבד -- למלא את משך שנות לימוד התורה באופן מלא", תוך דרישה לשימור הסדר בן-גוריון המקורי.',
   },
   { partyId: "yahadut-hatorah", questionId: "rel-7", stanceValue: 2 },
   { partyId: "yahadut-hatorah", questionId: "rel-8", stanceValue: -2 },
   { partyId: "yahadut-hatorah", questionId: "rel-9", stanceValue: 2 },
   { partyId: "yahadut-hatorah", questionId: "rel-10", stanceValue: -2 },
   { partyId: "yahadut-hatorah", questionId: "rel-11", stanceValue: -2 },
-  { partyId: "yahadut-hatorah", questionId: "jud-1", stanceValue: 2 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "jud-1",
+    stanceValue: 2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%94_%D7%92%D7%A4%D7%A0%D7%99",
+    sourceNote:
+      'יחסו של גפני למערכת המשפט "מאופיין בביקורתיות"; טען לא פעם כי "בית המשפט פוסק באופן שיטתי נגד הציבור החרדי", ואף איים בעבר בצעדי מחאה אזרחיים כמו מרד מסים.',
+  },
   {
     partyId: "yahadut-hatorah",
     questionId: "jud-2",
@@ -781,10 +1179,24 @@ export const partyStances: PartyStance[] = [
   { partyId: "yahadut-hatorah", questionId: "gov-4", stanceValue: -1 },
   { partyId: "yahadut-hatorah", questionId: "gov-5", stanceValue: -1 },
   { partyId: "yahadut-hatorah", questionId: "soc-1", stanceValue: 2 },
-  { partyId: "yahadut-hatorah", questionId: "soc-2", stanceValue: -2 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "soc-2",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/judaism/article/hyruplhvs",
+    sourceNote:
+      "אותו שאלון: התנגדות מפורשת וחדה לנישואין אזרחיים כפריצת גבול המאיימת על הזהות היהודית. השאלון אינו מתייחס במפורש לזוגיות חד-מינית, אך ההתנגדות ההלכתית של הזרם החרדי-ליטאי/חסידי לזוגיות חד-מינית היא עמדה ידועה ועקבית בציבור החרדי.",
+  },
   { partyId: "yahadut-hatorah", questionId: "soc-3", stanceValue: 2 },
   { partyId: "yahadut-hatorah", questionId: "soc-5", stanceValue: 1 },
-  { partyId: "yahadut-hatorah", questionId: "soc-6", stanceValue: -2 },
+  {
+    partyId: "yahadut-hatorah",
+    questionId: "soc-6",
+    stanceValue: -2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%93%D7%95%D7%AA_%D7%94%D7%AA%D7%95%D7%A8%D7%94",
+    sourceNote:
+      'ויקיפדיה מתעדת במפורש כי "כמו מפלגות חרדיות אחרות, ברשימות המפלגה לאורך השנים ישנם גברים בלבד".',
+  },
   { partyId: "yahadut-hatorah", questionId: "soc-7", stanceValue: 2 },
   { partyId: "yahadut-hatorah", questionId: "soc-10", stanceValue: -2 },
   { partyId: "raam", questionId: "sec-1", stanceValue: -1 },
@@ -860,8 +1272,22 @@ export const partyStances: PartyStance[] = [
   { partyId: "raam", questionId: "gov-4", stanceValue: 0 },
   { partyId: "raam", questionId: "gov-5", stanceValue: 0 },
   { partyId: "raam", questionId: "soc-1", stanceValue: -1 },
-  { partyId: "raam", questionId: "soc-2", stanceValue: 1 },
-  { partyId: "raam", questionId: "soc-3", stanceValue: -1 },
+  {
+    partyId: "raam",
+    questionId: "soc-2",
+    stanceValue: -1,
+    sourceUrl: "https://www.ynet.co.il/news/article/HJIRSudN00",
+    sourceNote:
+      'לפי ערך הוויקיפדיה (he.wikipedia.org/wiki/מנסור_עבאס): עבאס "תומך בערכי משפחה מסורתיים", התנגד למצעדי גאווה, ודחה כניסת ארגוני להט"ב לבתי ספר ערביים; "אין ברצונה של רע"מ לכפות את דעתה בנושא וכי הוא מכבד כל אדם כמו שהוא" (הימנעות-מכפייה, לא תמיכה בהכרה מלאה). ח"כ וליד טאהא (רע"ם, 2020): "לחברה הערבית יש מערכת דתית-תרבותית-ערכית שאינה מקבלת זאת כלגיטימי", והצביע נגד חוק איסור טיפולי המרה.',
+  },
+  {
+    partyId: "raam",
+    questionId: "soc-3",
+    stanceValue: 2,
+    sourceUrl: "https://www.ynet.co.il/news/article/HJIRSudN00",
+    sourceNote:
+      'אותם מקורות: עבאס "דחה כניסת ארגוני להט"ב לבתי ספר ערביים" -- כמעט התאמה מדויקת להגבלת תכנים הנוגעים למגדר ולנטייה מינית בחינוך. ח"כ וליד טאהא (2020) חיזק זאת בהתייחסותו לאי-לגיטימיות בעיני החברה הערבית.',
+  },
   { partyId: "raam", questionId: "soc-5", stanceValue: 2 },
   { partyId: "raam", questionId: "soc-6", stanceValue: 1 },
   { partyId: "raam", questionId: "soc-7", stanceValue: -1 },
@@ -882,7 +1308,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "hadash-taal", questionId: "sec-7", stanceValue: 0 },
   { partyId: "hadash-taal", questionId: "sec-8", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "sec-9", stanceValue: 2 },
-  { partyId: "hadash-taal", questionId: "sec-10", stanceValue: -2 },
+  {
+    partyId: "hadash-taal",
+    questionId: "sec-10",
+    stanceValue: -2,
+    sourceUrl: "https://www.emess.co.il/radio/1834051",
+    sourceNote:
+      'לאחר המבצע הישראלי-אמריקאי נגד איראן (יוני 2025), אחמד טיבי: "לא היה מכה מקדימה, אלא תוקפנות יזומה מצד ממשלות ארה"ב וישראל"; איימן עודה התנגד לתקיפה וקרא להימנע מ"מלחמת נצח".',
+  },
   { partyId: "hadash-taal", questionId: "sec-11", stanceValue: -1 },
   { partyId: "hadash-taal", questionId: "sec-12", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "sec-13", stanceValue: 0 },
@@ -893,7 +1326,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://maki.org.il/%D7%A4%D7%95%D7%A8%D7%A1%D7%9D-%D7%94%D7%9E%D7%A6%D7%A2-%D7%A9%D7%9C-%D7%94%D7%A8%D7%A9%D7%99%D7%9E%D7%94-%D7%94%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA-%D7%A9%D7%9C-%D7%97%D7%93%D7%A9-%D7%95%D7%94/",
     sourceNote:
-      'מצע הרשימה המשותפת (בהובלת חד"ש) קורא להבטיח זכויות יסוד לבריאות, חינוך, רווחה ודיור לכלל האזרחים.',
+      'תואם באופן ישיר את סעיף הכלכלה במצע המפלגה: "חיזוק זכויות עובדים ואיגודים מקצועיים", "השקעה ציבורית מסיבית ברווחה".',
   },
   { partyId: "hadash-taal", questionId: "eco-3", stanceValue: -2 },
   {
@@ -902,7 +1335,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://maki.org.il/%D7%A4%D7%95%D7%A8%D7%A1%D7%9D-%D7%94%D7%9E%D7%A6%D7%A2-%D7%A9%D7%9C-%D7%94%D7%A8%D7%A9%D7%99%D7%9E%D7%94-%D7%94%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA-%D7%A9%D7%9C-%D7%97%D7%93%D7%A9-%D7%95%D7%94/",
     sourceNote:
-      "מצע הרשימה המשותפת קורא במפורש להעלאת שכר המינימום לכ-60% משכר הממוצע במשק.",
+      "עמדה פרו-עובדים מוצהרת ועקבית של המפלגה בעד העלאת שכר מינימום משמעותית.",
   },
   { partyId: "hadash-taal", questionId: "eco-5", stanceValue: 1 },
   {
@@ -911,7 +1344,7 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://maki.org.il/%D7%A4%D7%95%D7%A8%D7%A1%D7%9D-%D7%94%D7%9E%D7%A6%D7%A2-%D7%A9%D7%9C-%D7%94%D7%A8%D7%A9%D7%99%D7%9E%D7%94-%D7%94%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA-%D7%A9%D7%9C-%D7%97%D7%93%D7%A9-%D7%95%D7%94/",
     sourceNote:
-      'מצע הרשימה המשותפת (בהובלת חד"ש) כולל הבטחת דיור כזכות יסוד לכלל האזרחים.',
+      "תואם למצע ולפרופיל האידאולוגי הסוציאליסטי המוצהר של המפלגה (דיור כזכות יסוד, השקעה ציבורית מסיבית).",
   },
   { partyId: "hadash-taal", questionId: "eco-7", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "eco-8", stanceValue: 2 },
@@ -919,7 +1352,14 @@ export const partyStances: PartyStance[] = [
   { partyId: "hadash-taal", questionId: "eco-10", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "eco-11", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "eco-12", stanceValue: -2 },
-  { partyId: "hadash-taal", questionId: "inf-1", stanceValue: 2 },
+  {
+    partyId: "hadash-taal",
+    questionId: "inf-1",
+    stanceValue: 2,
+    sourceUrl: "https://oknesset.org/meetings/2/2/2208776.html",
+    sourceNote:
+      'בדיון ועדת כנסת על חוק הרכבת התחתית (מטרו, 2024) איימן עודה: "כל פרויקט לטובת כלל האוכלוסייה, ובמיוחד המוחלשים כמו תחבורה ציבורית צריך לברך", וביקש התייחסות מיוחדת לחיבור יישובים ערביים למטרו.',
+  },
   { partyId: "hadash-taal", questionId: "inf-2", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "inf-3", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "inf-4", stanceValue: -1 },
@@ -933,22 +1373,22 @@ export const partyStances: PartyStance[] = [
     stanceValue: 2,
     sourceUrl: "https://www.ceci.org.il/ezgov/%D7%94%D7%A6%D7%A2%D7%AA-%D7%97%D7%95%D7%A7-%D7%A0%D7%99%D7%A9%D7%95%D7%90%D7%99%D7%9D-%D7%90%D7%96%D7%A8%D7%97%D7%99%D7%99%D7%9D-%D7%94%D7%AA%D7%A9%D7%A4%D7%92-2022-%D7%A9%D7%9C-%D7%97%D7%94%D7%9B-2/",
     sourceNote:
-      "מפלגת אופוזיציה/מחנה חילוני התומכת בקו הכללי של הצעות חוק לנישואין אזרחיים שהונחו על שולחן הכנסת (למשל הצעת ח\"כ טופורובסקי, 2022).",
+      'תואם באופן ישיר לסעיף מפורש במצע המפלגה: "הכרה מלאה בנישואים אזרחיים", "ביטול מונופול הרבנות".',
   },
-  {
-    partyId: "hadash-taal",
-    questionId: "rel-5",
-    stanceValue: -2,
-    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1t00cyqgje",
-    sourceNote:
-      "מפלגת אופוזיציה המבקרת את הממשלה על שהיא מאיצה חקיקה שנויה במחלוקת מחד, ובולמת גיוס חרדים משמעותי מאידך, ודורשת שוויון בנטל.",
-  },
+  { partyId: "hadash-taal", questionId: "rel-5", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "rel-7", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "rel-8", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "rel-9", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "rel-10", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "rel-11", stanceValue: 2 },
-  { partyId: "hadash-taal", questionId: "jud-1", stanceValue: -2 },
+  {
+    partyId: "hadash-taal",
+    questionId: "jud-1",
+    stanceValue: -2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
+    sourceNote:
+      'תואם למצע המפלגה: "התנגדות נחרצת לכל רפורמה משפטית", לצד השתתפות מוכרת של הרשימה המשותפת במחאה נגד הרפורמה המשפטית ב-2023.',
+  },
   {
     partyId: "hadash-taal",
     questionId: "jud-2",
@@ -971,13 +1411,41 @@ export const partyStances: PartyStance[] = [
   { partyId: "hadash-taal", questionId: "jud-9", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "gov-1", stanceValue: 1 },
   { partyId: "hadash-taal", questionId: "gov-3", stanceValue: 1 },
-  { partyId: "hadash-taal", questionId: "gov-4", stanceValue: 1 },
+  {
+    partyId: "hadash-taal",
+    questionId: "gov-4",
+    stanceValue: 2,
+    sourceUrl: "https://www.maariv.co.il/news/politics/Article-871919",
+    sourceNote:
+      'איימן עודה בטוויטר (20.10.2021), בהקשר "חוק נתניהו" שמונע מנאשם בכתב אישום להרכיב ממשלה: "לאיילת שקד יש רק אצבע אחת - לנו יש שש. גדעון סער, אפשר להעביר את החוק".',
+  },
   { partyId: "hadash-taal", questionId: "gov-5", stanceValue: 2 },
   { partyId: "hadash-taal", questionId: "soc-1", stanceValue: -2 },
-  { partyId: "hadash-taal", questionId: "soc-2", stanceValue: 2 },
-  { partyId: "hadash-taal", questionId: "soc-3", stanceValue: -2 },
+  {
+    partyId: "hadash-taal",
+    questionId: "soc-2",
+    stanceValue: 0,
+    sourceUrl: "https://www.inn.co.il/news/469635",
+    sourceNote:
+      'אחמד טיבי (ריאיון, 2.3.2021, ושוב עד עונת הגאווה 2025): "אנחנו נגד קידום תופעת הלהט"בים", והוא וחברי הרשימה המשותפת הצביעו נגד שינוי המינוח "אבא ואמא" במסמכים רשמיים. איימן עודה זכה לביקורת פומבית (מאקו) על הימנעות שיטתית מנקיטת עמדה תומכת בזכויות הקהילה הגאה -- עמדה מפוצלת בתוך הרשימה המשותפת, לא חד-משמעית.',
+  },
+  {
+    partyId: "hadash-taal",
+    questionId: "soc-3",
+    stanceValue: 0,
+    sourceUrl: "https://www.inn.co.il/news/469635",
+    sourceNote:
+      'אחמד טיבי הבהיר במפורש התנגדות ל"כניסת הקהילה הלהט"בית לבתי ספר לצורכי קידום תרבותי" -- עמדה שנויה במחלוקת בתוך הרשימה עצמה (הזרם החילוני-קומוניסטי של חד"ש מול עמדת טיבי/תע"ל), ללא עמדה מאוחדת ומוצהרת רשמית.',
+  },
   { partyId: "hadash-taal", questionId: "soc-5", stanceValue: 0 },
-  { partyId: "hadash-taal", questionId: "soc-6", stanceValue: 2 },
+  {
+    partyId: "hadash-taal",
+    questionId: "soc-6",
+    stanceValue: 2,
+    sourceUrl: "https://maki.org.il/%D7%A4%D7%95%D7%A8%D7%A1%D7%9D-%D7%94%D7%9E%D7%A6%D7%A2-%D7%A9%D7%9C-%D7%94%D7%A8%D7%A9%D7%99%D7%9E%D7%94-%D7%94%D7%9E%D7%A9%D7%95%D7%AA%D7%A4%D7%AA-%D7%A9%D7%9C-%D7%97%D7%93%D7%A9-%D7%95%D7%94/",
+    sourceNote:
+      'המצע קובע במפורש: "הרשימה המשותפת נאבקת למען שוויון זכויות לנשים בכל תחומי החיים".',
+  },
   { partyId: "hadash-taal", questionId: "soc-7", stanceValue: -2 },
   { partyId: "hadash-taal", questionId: "soc-10", stanceValue: 2 },
   {
@@ -993,9 +1461,9 @@ export const partyStances: PartyStance[] = [
     partyId: "religious-zionism",
     questionId: "sec-3",
     stanceValue: -2,
-    sourceUrl: "https://www.kan.org.il/content/kan-news/politic/953432/",
+    sourceUrl: "https://www.ynet.co.il/news/article/rkxhwox3t",
     sourceNote:
-      "הכנסת אישרה בפברואר 2024 ברוב גדול החלטת ממשלה לפיה ישראל תתנגד להטלת מדינה פלסטינית מבחוץ; המפלגה תמכה בהחלטה כחלק מהקואליציה.",
+      'הכנסת אישרה ברוב 99-11 הצהרה המתנגדת להקמת/הכרה במדינה פלסטינית; סמוטריץ\' הוביל ציבורית את המהלך וכתב שמדובר בהכרעה "נגד הקמת מדינת טרור ערבית בישראל... לא כעת ולא לעולם".',
   },
   { partyId: "religious-zionism", questionId: "sec-4", stanceValue: -2 },
   { partyId: "religious-zionism", questionId: "sec-5", stanceValue: 2 },
@@ -1022,9 +1490,23 @@ export const partyStances: PartyStance[] = [
   { partyId: "religious-zionism", questionId: "sec-12", stanceValue: -2 },
   { partyId: "religious-zionism", questionId: "sec-13", stanceValue: 1 },
   { partyId: "religious-zionism", questionId: "eco-1", stanceValue: 2 },
-  { partyId: "religious-zionism", questionId: "eco-2", stanceValue: -2 },
+  {
+    partyId: "religious-zionism",
+    questionId: "eco-2",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/economy/article/syxfneuac",
+    sourceNote:
+      'תוכנית התקציב של סמוטריץ\' (סוף 2025) כללה "הקפאת רוב קצבאות הביטוח הלאומי", העלאות מיסים, וביטול העלאת שכר המינימום המתוכננת -- עד כדי כך שנתניהו עצמו התנגד לגזרות אלה והעדיף מסלול של הקלות מס לחברות.',
+  },
   { partyId: "religious-zionism", questionId: "eco-3", stanceValue: 2 },
-  { partyId: "religious-zionism", questionId: "eco-4", stanceValue: -2 },
+  {
+    partyId: "religious-zionism",
+    questionId: "eco-4",
+    stanceValue: -2,
+    sourceUrl: "https://www.kan.org.il/content/kan-news/economic/826273/",
+    sourceNote:
+      "משא ומתן אוצר-הסתדרות הוביל להקפאת שכר המינימום לשנה כחלק מצמצום הגירעון, ביוזמת משרד האוצר בראשות סמוטריץ'.",
+  },
   { partyId: "religious-zionism", questionId: "eco-5", stanceValue: 2 },
   { partyId: "religious-zionism", questionId: "eco-6", stanceValue: -2 },
   { partyId: "religious-zionism", questionId: "eco-7", stanceValue: 2 },
@@ -1101,9 +1583,23 @@ export const partyStances: PartyStance[] = [
   { partyId: "religious-zionism", questionId: "soc-6", stanceValue: -2 },
   { partyId: "religious-zionism", questionId: "soc-7", stanceValue: 2 },
   { partyId: "religious-zionism", questionId: "soc-10", stanceValue: -2 },
-  { partyId: "beit-tzioni", questionId: "sec-1", stanceValue: 1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "sec-1",
+    stanceValue: 0,
+    sourceUrl: "https://www.bhol.co.il/news/1733010",
+    sourceNote:
+      'טרופר: "אני חושב שצריך לעשות פחות שם [ביהודה ושומרון] ויותר במקומות אחרים כמו בצפון ובדרום". תוכנית "מגן דוד" הרשמית ממקדת את סעיף ההתיישבות בחיזוק יישובי הגליל, הנגב וקהילות עוטף, לא הרחבה ביהודה ושומרון.',
+  },
   { partyId: "beit-tzioni", questionId: "sec-2", stanceValue: 1 },
-  { partyId: "beit-tzioni", questionId: "sec-3", stanceValue: -1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "sec-3",
+    stanceValue: -2,
+    sourceUrl: "https://www.bhol.co.il/news/1733010",
+    sourceNote:
+      'טרופר: "אני מתנגד למדינה פלסטינית".',
+  },
   { partyId: "beit-tzioni", questionId: "sec-4", stanceValue: -1 },
   { partyId: "beit-tzioni", questionId: "sec-5", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "sec-6", stanceValue: 2 },
@@ -1125,50 +1621,113 @@ export const partyStances: PartyStance[] = [
   { partyId: "beit-tzioni", questionId: "eco-9", stanceValue: 2 },
   { partyId: "beit-tzioni", questionId: "eco-10", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "eco-11", stanceValue: 2 },
-  { partyId: "beit-tzioni", questionId: "eco-12", stanceValue: 1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "eco-12",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/news/article/h1f79pligx",
+    sourceNote:
+      'סעיף "יוקר מחיה" בתוכנית "מגן דוד" הרשמית: "עידוד תחרות, שבירת מונופולים ותמיכה בהורים עובדים".',
+  },
   { partyId: "beit-tzioni", questionId: "inf-1", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "inf-2", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "inf-3", stanceValue: 0 },
   { partyId: "beit-tzioni", questionId: "inf-4", stanceValue: 0 },
   { partyId: "beit-tzioni", questionId: "inf-5", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "inf-6", stanceValue: 0 },
-  { partyId: "beit-tzioni", questionId: "rel-2", stanceValue: 1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "rel-2",
+    stanceValue: 1,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A2%D7%96_%D7%94%D7%A0%D7%93%D7%9C",
+    sourceNote:
+      "לפי הערך הביוגרפי של יועז הנדל, הוא תומך בתחבורה ציבורית בשבת.",
+  },
   { partyId: "beit-tzioni", questionId: "rel-3", stanceValue: -1 },
-  { partyId: "beit-tzioni", questionId: "rel-4", stanceValue: 2 },
-  { partyId: "beit-tzioni", questionId: "rel-5", stanceValue: -1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "rel-4",
+    stanceValue: 1,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A2%D7%96_%D7%94%D7%A0%D7%93%D7%9C",
+    sourceNote:
+      "הנדל תומך בברית זוגיות (Civil Union) לזוגות בני אותו מין אך מתנגד לנישואין חד-מיניים -- תמיכה חלקית באזרוח מוסד הנישואין, לא תמיכה גורפת בנישואין וגירושין אזרחיים לכלל הציבור.",
+  },
+  {
+    partyId: "beit-tzioni",
+    questionId: "rel-5",
+    stanceValue: -2,
+    sourceUrl: "https://www.ynet.co.il/news/article/h1f79pligx",
+    sourceNote:
+      'תוכנית "מגן דוד" קובעת "מסלול שירות שוויוני" (מרכז מיון אחיד לצבאי/לאומי/אזרחי, הטבות למשרתים וסנקציות למשתמטים); הנדל דורש גיוס חובה לכלל האזרחים ("אין זכויות בלי חובות"), וטרופר מתנה הצטרפות לממשלה בחקיקת חוק גיוס לפני הקמתה.',
+  },
   { partyId: "beit-tzioni", questionId: "rel-7", stanceValue: -1 },
   { partyId: "beit-tzioni", questionId: "rel-8", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "rel-9", stanceValue: -1 },
   { partyId: "beit-tzioni", questionId: "rel-10", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "rel-11", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "jud-1", stanceValue: -1 },
-  { partyId: "beit-tzioni", questionId: "jud-2", stanceValue: 1 },
-  { partyId: "beit-tzioni", questionId: "jud-3", stanceValue: -1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "jud-2",
+    stanceValue: 1,
+    sourceUrl: "https://www.bhol.co.il/news/1733010",
+    sourceNote:
+      'טרופר: "יותר מדי אקטיביזם שיפוטי" ותמיכה ב"תיקונים" במינוי שופטים, לצד מחויבות רשמית ומוצהרת של המפלגה ל"איזון ובלמים בין הרשויות" ו"חיזוק שלטון החוק" -- רפורמה מתונה בתוך מסגרת השומרת על עצמאות בית המשפט.',
+  },
+  {
+    partyId: "beit-tzioni",
+    questionId: "jud-3",
+    stanceValue: -1,
+    sourceUrl: "https://www.bhol.co.il/news/1733010",
+    sourceNote:
+      "טרופר תומך ברפורמה קונקרטית במינוי שופטים אך לא במודל של רוב לפוליטיקאים: מציע דרישת רוב של 7 מתוך 9 חברי הוועדה (מנגנון קונצנזוס/רוב-על החוצה קואליציה-אופוזיציה).",
+  },
   { partyId: "beit-tzioni", questionId: "jud-5", stanceValue: -1 },
   { partyId: "beit-tzioni", questionId: "jud-7", stanceValue: -1 },
   { partyId: "beit-tzioni", questionId: "jud-8", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "jud-9", stanceValue: -1 },
-  { partyId: "beit-tzioni", questionId: "gov-1", stanceValue: 2 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "gov-1",
+    stanceValue: 2,
+    sourceUrl: "https://www.ynet.co.il/news/article/s1enybqxzl",
+    sourceNote:
+      "בין מייסדי המפלגה נמנים שירה שפירא (אמו של ענר שפירא, נהרג ב-7.10), אליסף פרץ (בנה של מרים פרץ), ודנה סיטון סילברמן (אחותה של שירי ביבס) -- קהילת השכול/חטופים של 7 באוקטובר, יחד עם מסגור אנטי-נתניהו מובהק.",
+  },
   { partyId: "beit-tzioni", questionId: "gov-3", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "gov-4", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "gov-5", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "soc-1", stanceValue: 0 },
-  { partyId: "beit-tzioni", questionId: "soc-2", stanceValue: 1 },
+  {
+    partyId: "beit-tzioni",
+    questionId: "soc-2",
+    stanceValue: 1,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A2%D7%96_%D7%94%D7%A0%D7%93%D7%9C",
+    sourceNote:
+      'הנדל תומך בברית זוגיות אזרחית (Civil Union) לזוגות חד-מיניים, אך מתנגד לנישואין חד-מיניים עצמם -- תמיכה חלקית ולא הכרה "לכל דבר ועניין".',
+  },
   { partyId: "beit-tzioni", questionId: "soc-3", stanceValue: 0 },
   { partyId: "beit-tzioni", questionId: "soc-5", stanceValue: 1 },
   { partyId: "beit-tzioni", questionId: "soc-6", stanceValue: 0 },
   { partyId: "beit-tzioni", questionId: "soc-7", stanceValue: 0 },
   { partyId: "beit-tzioni", questionId: "soc-10", stanceValue: 1 },
 
-  { partyId: "balad", questionId: "sec-1", stanceValue: -2 },
+  {
+    partyId: "balad",
+    questionId: "sec-1",
+    stanceValue: -2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%91%D7%9C%22%D7%93",
+    sourceNote:
+      'מצע בל"ד דורש "נסיגת ישראל מכל השטחים הכבושים" ופינוי התנחלויות -- עמדה הפוכה חד-משמעית מהרחבת ההתיישבות.',
+  },
   { partyId: "balad", questionId: "sec-2", stanceValue: -2 },
   {
     partyId: "balad",
     questionId: "sec-3",
     stanceValue: 1,
-    sourceUrl: "https://www.mekomit.co.il/%D7%A2%D7%A9%D7%A8%D7%99%D7%9D-%D7%A9%D7%A0%D7%94-%D7%9C%D7%9E%D7%A4%D7%9C%D7%92%D7%AA-%D7%91%D7%9C%D7%93/",
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%9E%D7%99_%D7%90%D7%91%D7%95_%D7%A9%D7%97%D7%90%D7%93%D7%94",
     sourceNote:
-      'עמדתו ההיסטורית של בשארה ובל"ד היא בעצם לא "שתי מדינות" אלא הפיכת ישראל למדינה אזרחית רב-תרבותית אחת; הערך הנמוך יחסית (1, לא 2) משקף שזו אינה החזון המלא של המפלגה, אלא רק שיפור על פני המצב הקיים.',
+      'סאמי אבו שחאדה: צריכות להיות "שתי מדינות: אחת לפלסטינים בשם \'פלסטין\', ולצידה מדינת כל אזרחיה" -- תמיכה בהקמת מדינה פלסטינית, אך לצד חזון של שינוי מהותי בישראל עצמה, לא "ישראל כפי שהיא היום" לצד פלסטין.',
   },
   { partyId: "balad", questionId: "sec-4", stanceValue: 2 },
   { partyId: "balad", questionId: "sec-5", stanceValue: -2 },
@@ -1202,49 +1761,28 @@ export const partyStances: PartyStance[] = [
     partyId: "balad",
     questionId: "rel-2",
     stanceValue: 2,
-    sourceUrl: "https://www.mekomit.co.il/%D7%A2%D7%A9%D7%A8%D7%99%D7%9D-%D7%A9%D7%A0%D7%94-%D7%9C%D7%9E%D7%A4%D7%9C%D7%92%D7%AA-%D7%91%D7%9C%D7%93/",
+    sourceUrl: "https://www.idi.org.il/policy/parties-and-elections/parties/balad/",
     sourceNote:
-      'האידיאולוגיה המכוננת של בל"ד קוראת להפרדה מלאה בין דת למדינה, ולכן תומכת גם בהסרת מגבלות דתיות כמו איסור תחבורה ציבורית בשבת.',
+      'המכון הישראלי לדמוקרטיה מאשר שהמצע הרשמי של בל"ד שואף ל"הפרדת הדת מהמדינה" (הפרדה מלאה).',
   },
   { partyId: "balad", questionId: "rel-3", stanceValue: -2 },
   {
     partyId: "balad",
     questionId: "rel-4",
     stanceValue: 2,
-    sourceUrl: "https://www.ceci.org.il/ezgov/%D7%94%D7%A6%D7%A2%D7%AA-%D7%97%D7%95%D7%A7-%D7%A0%D7%99%D7%A9%D7%95%D7%90%D7%99%D7%9D-%D7%90%D7%96%D7%A8%D7%97%D7%99%D7%99%D7%9D-%D7%94%D7%AA%D7%A9%D7%A4%D7%92-2022-%D7%A9%D7%9C-%D7%97%D7%94%D7%9B-2/",
+    sourceUrl: "https://www.idi.org.il/policy/parties-and-elections/parties/balad/",
     sourceNote:
-      "מפלגת אופוזיציה/מחנה חילוני התומכת בקו הכללי של הצעות חוק לנישואין אזרחיים שהונחו על שולחן הכנסת (למשל הצעת ח\"כ טופורובסקי, 2022).",
+      "אותו יסוד אידאולוגי (הפרדת דת ומדינה מלאה) תומך ישירות בחקיקת נישואין וגירושין אזרחיים.",
   },
-  {
-    partyId: "balad",
-    questionId: "rel-5",
-    stanceValue: -2,
-    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1t00cyqgje",
-    sourceNote:
-      "מפלגת אופוזיציה המבקרת את הממשלה על שהיא מאיצה חקיקה שנויה במחלוקת מחד, ובולמת גיוס חרדים משמעותי מאידך, ודורשת שוויון בנטל.",
-  },
+  { partyId: "balad", questionId: "rel-5", stanceValue: -2 },
   { partyId: "balad", questionId: "rel-7", stanceValue: -2 },
   { partyId: "balad", questionId: "rel-8", stanceValue: 2 },
   { partyId: "balad", questionId: "rel-9", stanceValue: -2 },
   { partyId: "balad", questionId: "rel-10", stanceValue: 2 },
   { partyId: "balad", questionId: "rel-11", stanceValue: 1 },
   { partyId: "balad", questionId: "jud-1", stanceValue: -2 },
-  {
-    partyId: "balad",
-    questionId: "jud-2",
-    stanceValue: 2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
-    sourceNote:
-      "מפלגת אופוזיציה מרכזית שהובילה את המחאה ההמונית נגד הרפורמה המשפטית של 2023 (שכללה גם את שינוי הרכב הוועדה לבחירת שופטים), ותומכת בשימור עצמאות בית המשפט העליון.",
-  },
-  {
-    partyId: "balad",
-    questionId: "jud-3",
-    stanceValue: -2,
-    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
-    sourceNote:
-      "מפלגת אופוזיציה שהתנגדה לשינוי הרכב הוועדה לבחירת שופטים לרוב קואליציוני, כחלק מהתנגדותה למכלול הרפורמה המשפטית של 2023.",
-  },
+  { partyId: "balad", questionId: "jud-2", stanceValue: 2 },
+  { partyId: "balad", questionId: "jud-3", stanceValue: -2 },
   { partyId: "balad", questionId: "jud-5", stanceValue: -2 },
   { partyId: "balad", questionId: "jud-7", stanceValue: -2 },
   { partyId: "balad", questionId: "jud-8", stanceValue: 2 },
@@ -1258,9 +1796,9 @@ export const partyStances: PartyStance[] = [
     partyId: "balad",
     questionId: "soc-2",
     stanceValue: 2,
-    sourceUrl: "https://www.mekomit.co.il/%D7%A2%D7%A9%D7%A8%D7%99%D7%9D-%D7%A9%D7%A0%D7%94-%D7%9C%D7%9E%D7%A4%D7%9C%D7%92%D7%AA-%D7%91%D7%9C%D7%93/",
+    sourceUrl: "https://www.idi.org.il/policy/parties-and-elections/parties/balad/",
     sourceNote:
-      'אידיאולוגיית בל"ד קוראת למדינה אזרחית-חילונית מלאה, עם הפרדה בין דת למדינה - עמדה התומכת בהכרה מלאה בנישואין אזרחיים.',
+      'היסוד האידאולוגי (הפרדת דת ומדינה מלאה) תומך בחלק ה"נישואים אזרחיים" של השאלה; לא אותר אישוש ספציפי לחלק ה"זוגיות חד-מינית" -- נושא שבו מפלגות ערביות נוטות היסטורית להיזהר בהצהרות פומביות מפורשות.',
   },
   { partyId: "balad", questionId: "soc-3", stanceValue: -1 },
   { partyId: "balad", questionId: "soc-5", stanceValue: -1 },
@@ -1270,7 +1808,14 @@ export const partyStances: PartyStance[] = [
 
   { partyId: "kachol-lavan", questionId: "sec-1", stanceValue: -1 },
   { partyId: "kachol-lavan", questionId: "sec-2", stanceValue: 1 },
-  { partyId: "kachol-lavan", questionId: "sec-3", stanceValue: 0 },
+  {
+    partyId: "kachol-lavan",
+    questionId: "sec-3",
+    stanceValue: -2,
+    sourceUrl: "https://www.maariv.co.il/news/politics/article-1194144",
+    sourceNote:
+      'גנץ, כנס "מקור ראשון" בהתנחלות אפרת (מאי 2025): "מי שמדבר על מדינה פלסטינית או נסיגות מנותק מהמציאות" -- הצהיר כי על ישראל לשמור שליטה ביטחונית מלאה וחופש פעולה בעזה, ביהודה ושומרון, בדרום לבנון ובגבול סוריה.',
+  },
   { partyId: "kachol-lavan", questionId: "sec-4", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "sec-5", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "sec-6", stanceValue: 0 },
@@ -1283,9 +1828,16 @@ export const partyStances: PartyStance[] = [
     stanceValue: 1,
     sourceUrl: "https://www.srugim.co.il/1116188-%D7%92%D7%A0%D7%A5-%D7%A7%D7%95%D7%A8%D7%90-%D7%9C%D7%A4%D7%A2%D7%95%D7%9C%D7%94-%D7%9E%D7%99%D7%99%D7%93%D7%99%D7%AA-%D7%91%D7%90%D7%99%D7%A8%D7%90%D7%9F-%D7%96%D7%94-%D7%94%D7%96%D7%9E%D7%9F",
     sourceNote:
-      'גנץ קרא לפעולה צבאית מתואמת נגד איראן ("חלון הזדמנויות היסטורי וצר"), אך תוך תיאום עם ארה"ב - לא פעולה עצמאית.',
+      'גנץ (אפריל 2025) קרא "לתאם עם האמריקאים תקיפה, ומהלך פעולות שישנה את המזרח התיכון", תוך אזכור ש"איראן חלשה מאי פעם" ו"חלון הזדמנויות היסטורי וצר" -- אך במפורש בתיאום עם ארה"ב, לא כפעולה עצמאית.',
   },
-  { partyId: "kachol-lavan", questionId: "sec-11", stanceValue: -1 },
+  {
+    partyId: "kachol-lavan",
+    questionId: "sec-11",
+    stanceValue: -2,
+    sourceUrl: "https://www.srugim.co.il/1116188-%D7%92%D7%A0%D7%A5-%D7%A7%D7%95%D7%A8%D7%90-%D7%9C%D7%A4%D7%A2%D7%95%D7%9C%D7%94-%D7%9E%D7%99%D7%99%D7%93%D7%99%D7%AA-%D7%91%D7%90%D7%99%D7%A8%D7%90%D7%9F-%D7%96%D7%94-%D7%94%D7%96%D7%9E%D7%9F",
+    sourceNote:
+      'גנץ קרא לפעולה נגד איראן "תוך תיאום עם ארה"ב - לא פעולה עצמאית". מצע המפלגה קובע כעיקרון מוצהר "שמירה על קשר הדוק ותיאום מלא עם ארה"ב" -- כמעט היפוך ישיר של עצמאות ביטחונית גם במחיר עימות.',
+  },
   { partyId: "kachol-lavan", questionId: "sec-12", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "sec-13", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "eco-1", stanceValue: 1 },
@@ -1306,23 +1858,30 @@ export const partyStances: PartyStance[] = [
   { partyId: "kachol-lavan", questionId: "inf-4", stanceValue: 0 },
   { partyId: "kachol-lavan", questionId: "inf-5", stanceValue: 2 },
   { partyId: "kachol-lavan", questionId: "inf-6", stanceValue: 1 },
-  { partyId: "kachol-lavan", questionId: "rel-2", stanceValue: 1 },
-  { partyId: "kachol-lavan", questionId: "rel-3", stanceValue: -1 },
-  { partyId: "kachol-lavan", questionId: "rel-4", stanceValue: 1 },
   {
     partyId: "kachol-lavan",
-    questionId: "rel-5",
-    stanceValue: -2,
-    sourceUrl: "https://www.calcalist.co.il/local_news/article/r1t00cyqgje",
+    questionId: "rel-2",
+    stanceValue: 1,
+    sourceUrl: "https://www.kikar.co.il/324389.html",
     sourceNote:
-      "מפלגת אופוזיציה המבקרת את הממשלה על שהיא מאיצה חקיקה שנויה במחלוקת מחד, ובולמת גיוס חרדים משמעותי מאידך, ודורשת שוויון בנטל.",
+      'גנץ (ציוץ, יולי 2019): "בשיח פתוח, מתחשב ומכבד, נוכל למצוא את דרך המלך ולהפעיל תחבורה ציבורית בשבת ברשויות המעוניינות בכך" -- תמיכה מותנית ומבוססת-בחירה מקומית, לא קריאה לחקיקה ארצית גורפת.',
   },
+  { partyId: "kachol-lavan", questionId: "rel-3", stanceValue: -1 },
+  { partyId: "kachol-lavan", questionId: "rel-4", stanceValue: 1 },
+  { partyId: "kachol-lavan", questionId: "rel-5", stanceValue: -2 },
   { partyId: "kachol-lavan", questionId: "rel-7", stanceValue: -1 },
   { partyId: "kachol-lavan", questionId: "rel-8", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "rel-9", stanceValue: -1 },
   { partyId: "kachol-lavan", questionId: "rel-10", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "rel-11", stanceValue: 1 },
-  { partyId: "kachol-lavan", questionId: "jud-1", stanceValue: -2 },
+  {
+    partyId: "kachol-lavan",
+    questionId: "jud-1",
+    stanceValue: -2,
+    sourceUrl: "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%97%D7%90%D7%94_%D7%A0%D7%92%D7%93_%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
+    sourceNote:
+      "פסקת ההתגברות הייתה מרכיב מרכזי במכלול הרפורמה המשפטית של 2023; כחול לבן, כמפלגת אופוזיציה מובילה במחאה נגד הרפורמה, התנגדה למכלול כולו.",
+  },
   {
     partyId: "kachol-lavan",
     questionId: "jud-2",
@@ -1355,7 +1914,14 @@ export const partyStances: PartyStance[] = [
   },
   { partyId: "kachol-lavan", questionId: "gov-5", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "soc-1", stanceValue: 0 },
-  { partyId: "kachol-lavan", questionId: "soc-2", stanceValue: 1 },
+  {
+    partyId: "kachol-lavan",
+    questionId: "soc-2",
+    stanceValue: 1,
+    sourceUrl: "https://www.ynet.co.il/articles/0,7340,L-5481891,00.html",
+    sourceNote:
+      'גנץ, כנס בחירות בבאר טוביה (מרץ 2019): "אני נחוש לסיים את ההפליה כלפי הקהילה הגאה... בלתי נתפס שעדיין נשללות זכויות לקהילה שלמה".',
+  },
   { partyId: "kachol-lavan", questionId: "soc-3", stanceValue: -1 },
   { partyId: "kachol-lavan", questionId: "soc-5", stanceValue: 1 },
   { partyId: "kachol-lavan", questionId: "soc-6", stanceValue: 1 },
