@@ -86,7 +86,7 @@ export function SidebarDrawer() {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="fixed top-4 start-4 z-40 hidden items-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white shadow-ambient-lg transition-all hover:-translate-y-0.5 hover:glow-sapphire cursor-pointer lg:flex"
+          className="fixed top-4 start-4 z-40 hidden items-center gap-2 rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white shadow-ambient-lg transition-all hover:-translate-y-0.5 hover:glow-sapphire cursor-pointer lg:flex"
         >
           <Menu className="h-4 w-4" />
           {dict.nav.menuButton}
@@ -110,7 +110,7 @@ export function SidebarDrawer() {
           aria-haspopup="menu"
           aria-expanded={langOpen}
           aria-label={dict.nav.switchLanguage}
-          className="flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2.5 text-sm font-semibold text-navy shadow-ambient-lg ring-1 ring-navy/10 transition-all hover:-translate-y-0.5 hover:glow-sapphire cursor-pointer"
+          className="flex items-center gap-1.5 rounded-full bg-white px-3.5 py-3 text-sm font-semibold text-navy shadow-ambient-lg ring-1 ring-navy/10 transition-all hover:-translate-y-0.5 hover:glow-sapphire cursor-pointer"
         >
           <Globe className="h-4 w-4" />
           {currentLocale.label}
